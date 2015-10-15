@@ -17,6 +17,10 @@ https://bugzilla.redhat.com/show_bug.cgi?id=1238889
 
 So take a look to the Main.qml and read the comments!
 
+### You want it, you get it, the Screenshot
+
+![sample screenshot](https://raw.githubusercontent.com/siduction/sddm-theme-deepspace/master/artwork/png/preview.jpg)
+
 ### How to test
 
 (as user) sddm-greeter --test-mode --theme ~/downloads/directory/`<theme>`/
