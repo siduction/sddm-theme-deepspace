@@ -1,31 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: 
-Upstream-Contact: 
-
-Files: siduction-sddm/*
-Copyright: 2015 Hendrik Lehmbruch <hendrikl@siduction.org>
-           2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
-License: GPL-2.0+
-
-Files: siduction-sddm/main.qml
-Copyright: 2015 Hendrik Lehmbruch <hendrikl@siduction.org>
-           2015 Chris Ringeval <eatdirt@mageia.org>
-           2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
-License: GPL-2.0+
-
-Files: siduction-sddm/components/*
-Copyright: 2015 Hendrik Lehmbruch <hendrikl@siduction.org> 
-           2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
-License: GPL-2.0+
-
-Files: siduction-sddm/images/background.png
-Copyright: 2011-2015 Hendrik Lehmbruch <hendrikl@siduction.org>
-           2011-2015 Alf Gaida <agaida@siduction.org>
-           2011-2013 Sven Strohmeier <se7en@siduction.net>
-           2011      Alexander Weber <xweber.alex@googlemail.com>
-           2011      Tom Wroblewski <GoinEasy9@linux.com>
-           2011      Markus Meyer <coruja@siduction.org>
-License: CC-BY-SA-3.0
+Upstream-Contact:
 
 Files: deepspace/*
 Copyright: 2015 Hendrik Lehmbruch <hendrikl@siduction.org>
@@ -37,7 +12,7 @@ Files: deepspace/images/*
 Copyright: 2011-2015 Hendrik Lehmbruch <hendrikl@siduction.org>
 License: CC-BY-SA-3.0
 
-Files: siduction-sddm/displaymanager/artwork/original-images/*
+Files: artwork/original-images/*
 Copyright: 2013 Reza Fatahilah Shah <rshah0385@kireihana.com>
            2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
 License: GPL-2.0+
