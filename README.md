@@ -6,7 +6,7 @@ Layout and lots more.
 
 I made that theme for siduction: http://siduction.org
 
-**siduction / siduction-de** on **irc.oftc.net**
+(irc: #siduction / #siduction-de on irc.oftc.net)
 
 For example, no successfully logged in lastUser is displayed!
 
