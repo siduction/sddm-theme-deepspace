@@ -8,13 +8,11 @@ I made that theme for siduction: http://siduction.org
 
 (irc: #siduction / #siduction-de on irc.oftc.net)
 
-For example, no successfully logged in lastUser is displayed!
+For example, no successfully logged in lastUser is displayed, because of security reasons.
 
-There is no chance to activate it via /etc/sddm.conf, you have to manually edit the Main.qml because of a bug
+There is no chance to activate/deactivate it via /etc/sddm.conf, i tested it and it dosen't work.
 
-For example, no successfully logged in lastUser is displayed!
-
-There is no chance to activate it via /etc/sddm.conf, you have to manually edit the Main.qml, because of a bug
+so you have to manually edit the Main.qml, because of a bug
 found here: 
 
 https://bugzilla.redhat.com/show_bug.cgi?id=1238889
