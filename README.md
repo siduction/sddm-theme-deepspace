@@ -4,10 +4,6 @@ It is based on the elarun theme, but really modivied!
 
 Layout and lots more.
 
-I made that theme for siduction: http://siduction.org
-
-(irc: #siduction / #siduction-de on irc.oftc.net)
-
 For example, no successfully logged in lastUser is displayed, because of security reasons.
 
 There is no chance to activate/deactivate it via /etc/sddm.conf, i tested it and it dosen't work.
@@ -27,13 +23,12 @@ So take a look to the Main.qml and read the comments!
 
 (as user) sddm-greeter --test-mode --theme ~/downloads/directory/`<theme>`/
 
-
 ### How to install
 
 (as root) copy the `<theme>` to /usr/share/sddm/themes/
 
-be shure that the directory 'new theme' is set to drwxr-xr-x
+Be shure that the directory 'new theme' is set to drwxr-xr-x
 
-if not, run chmod 755 'new theme'!
+If not, run chmod 755 'new theme'!
 
 Otherwise you have no luck to use it!
