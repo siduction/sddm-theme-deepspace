@@ -1,0 +1,14 @@
+Package: sddm-theme-whiteroom
+Source: sddm-themes-siduction
+Version: 2015.10.18-1
+Architecture: amd64
+Maintainer: Alf Gaida <agaida@siduction.org>
+Installed-Size: 608
+Recommends: sddm
+Provides: sddm-theme
+Section: x11
+Priority: optional
+Description: Whiteroom theme for sddm
+ Siduction whiteroom sddm theme.
+ .
+ This package contain a Siduction sddm theme.
