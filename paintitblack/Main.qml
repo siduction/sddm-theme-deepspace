@@ -237,10 +237,17 @@ Rectangle {
                             id: login_button
                             height: 32
                             source: "images/login_normal.png"
+                                                    
         
                                 onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
         
                                 KeyNavigation.backtab: pw_entry; KeyNavigation.tab: session_button
+                            }
+                            
+                        ToolTip {
+                            id: tooltip0
+                            target: login_button
+                            text: textConstants.login
                             }
                         }
                     }
@@ -250,6 +257,36 @@ Rectangle {
                     anchors.bottom: parent.bottom
                     anchors.left: parent.left; anchors.right: parent.right
                     anchors.leftMargin:5
+                    
+                    ToolTip {
+                        id: tooltip1
+                            target: session_button
+                            text: textConstants.session
+                            }
+                            
+                    ToolTip {
+                        id: tooltip2
+                            target: system_button
+                            text: textConstants.shutdown
+                            }
+                            
+                    ToolTip {
+                        id: tooltip3
+                            target: reboot_button
+                            text: textConstants.reboot
+                            }
+                            
+                    ToolTip {
+                        id: tooltip4
+                            target: suspend_button
+                            text: "Suspend" //textConstants.suspend
+                            }
+                            
+                    ToolTip {
+                        id: tooltip5
+                            target: hibernate_button
+                            text: "Hibernate" //textConstants.hibernate
+                            }
                     
                     Row {
                         id: buttonRow
