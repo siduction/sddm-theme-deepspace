@@ -40,8 +40,6 @@ Item {
  property alias textColor: toolTip.color
  property alias font: toolTip.font
  property var target: null
-//  property alias hideDelay: hideTimer.interval
-//  property alias showDelay: showTimer.interval
 
 function onMouseHover(x, y)
  {
