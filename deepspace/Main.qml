@@ -35,7 +35,6 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-
         TextConstants { id: textConstants }
 
         Connections {
@@ -83,20 +82,12 @@ Rectangle {
             
                 Text {
                     id: errorMessage
-                    color: "white"
                     anchors.horizontalCenter: parent.horizontalCenter
-                    
-                    /*********************************************************
-                     *No need to prompt people to fill username and password
-                     *********************************************************/
-                    
-                    //text: textConstants.prompt
-                    
+                    font.bold: true
                     font.pixelSize: 17
                 }
             }
                 
-
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
@@ -110,8 +101,7 @@ Rectangle {
                Column {
                     anchors.left: parent.left
                     anchors.leftMargin:5
-                    height:51
-                    
+                    height:51                    
                     
                     Row {
                         id:labelRow
@@ -145,8 +135,7 @@ Rectangle {
                                 font.pixelSize: 12
                             }
                         }    
-                    }
-                    
+                    }                    
 
                     Row {
                         id: userRow
@@ -159,7 +148,7 @@ Rectangle {
                             
                             focus: true
 
-			    /* hack found in plasma breeze sddm as workaround to focus input field */
+			    /*** hack found in plasma breeze sddm as workaround to focus input field ***/
                             /***************************************************************************** 
 			    * focus works in qmlscene
                             * but this seems to be needed when loaded from SDDM
@@ -195,7 +184,6 @@ Rectangle {
 
                             KeyNavigation.backtab: user_entry; KeyNavigation.tab: pw_entry
                         }
-
 
                         PasswordBox {
                             id: pw_entry
@@ -236,8 +224,7 @@ Rectangle {
                         ImageButton {
                             id: login_button
                             height: 32
-                            source: "images/login_normal.png"
-                                                    
+                            source: "images/login_normal.png"                                                    
         
                                 onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
         
@@ -276,12 +263,14 @@ Rectangle {
                             text: textConstants.reboot
                             }
                             
+                    /* there is no translation in sddm for it, or i can't find it */
                     ToolTip {
                         id: tooltip4
                             target: suspend_button
                             text: "Suspend" //textConstants.suspend
                             }
                             
+                    /* there is no translation in sddm for it, or i can't find it */        
                     ToolTip {
                         id: tooltip5
                             target: hibernate_button
@@ -363,8 +352,7 @@ Rectangle {
         Rectangle {
             id: infoHost
             anchors.left: parent.left; anchors.top: parent.top
-            anchors.topMargin:10
-           
+            anchors.topMargin:10           
                                 
                 Text {
                     id:hostName
@@ -373,10 +361,10 @@ Rectangle {
                     anchors.topMargin:15
                     color:"white"
                     
-                    /******************************************************************* 
-                     * I will change that, when the german translation is fixed in debian.
+                    /*******************************************************************
                      * Now, only the hostName is displayed.
                      * "Welcome to" is not displayed
+                     * i decided that it looks nicer like it is, without the "welcome to"
                      * Feel free to change it 
                      *******************************************************************/
                     
@@ -390,8 +378,7 @@ Rectangle {
         Rectangle {
             id: infoDate
             anchors.right: parent.right; anchors.top: parent.top
-            anchors.topMargin:10
-            
+            anchors.topMargin:10            
 
                 Text {
                     id: time_label
@@ -409,10 +396,7 @@ Rectangle {
                     font.bold: true
                     font.pixelSize: 12
                 }
-
         }
-
-
 
     Component.onCompleted: {
         if (user_entry.text === "")
