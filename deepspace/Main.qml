@@ -72,21 +72,65 @@ Rectangle {
         
         Rectangle {
 
-            width: 612; height: 140 //120
+            width: 612; height: 120
             color: "#00000000"
 
             anchors.centerIn: parent
             
+            /* Messages and warnings */
             Column {
-                width: parent.width
-            
+
+                anchors.top: parent.top
+                anchors.centerIn: parent
+                
+                /* Capslock warning */                
+                Rectangle {
+                        
+                    anchors.centerIn: parent
+                    anchors.fill: parent
+                    anchors.top: parent.top
+                    anchors.topMargin: -80
+                        
+                    Text {
+                        id: txtCaps1
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        opacity: 0
+                        state: keyboard.capsLock ? "activated" : ""
+                        text: textConstants.capslockWarning
+                        color:"white"
+                        font.pixelSize: 14
+                                        
+                        states: [
+                            State {
+                                name: "activated"
+                                PropertyChanges { target:txtCaps1; opacity: 1; }
+                                }
+                                            ,
+                            State {
+                                name: ""
+                                PropertyChanges { target: txtCaps1; opacity: 0; }
+                                }
+                            ]
+                        }
+                    }
+                    
+                /* Login faild message */    
+                Rectangle {
+                           
+                    anchors.centerIn: parent
+                    anchors.fill: parent
+                    anchors.top: parent.top
+                    anchors.topMargin: -117
+                             
                     Text {
                         id: errorMessage
                         anchors.horizontalCenter: parent.horizontalCenter
-                        //font.bold: true
                         font.pixelSize: 17
-                    } 
+                        color:"white"
+                        }
+                    }
                 }
+            /* End Messages and warnings */
                 
             Item {
                 anchors.margins: 20
@@ -100,8 +144,8 @@ Rectangle {
 
                 Column {
                         anchors.left: parent.left
-                        anchors.leftMargin:5
-                        height:51                    
+                        anchors.leftMargin: 5
+                        height: 51                    
                         
                         Row {
                             id:labelRow
@@ -284,7 +328,8 @@ Rectangle {
                             
                             width: 250; height: 32
                             color: "transparent"
-                            anchors.topMargin:10
+                            anchors.topMargin:15
+                            anchors.top: parent.top
                         
                         Row {
                             
@@ -354,39 +399,10 @@ menu_session.state = "visible"
                                 index: sessionModel.lastIndex                    
                             }
                         }
-                        
-                    Rectangle {
-                        
-                        anchors.bottom: parent.bottom
-                        width: 298; height: 32
-                        color: "transparent"
-                        
-                        
-                        Text {
-                            id: txtCaps
-                            opacity: 0
-                            state: keyboard.capsLock ? "activated" : ""
-                            text: textConstants.capslockWarning
-                            color:"white"
-                            // font.pixelSize: 14
-                                        
-                        states: [
-                            State {
-                                name: "activated"
-                                PropertyChanges { target:txtCaps; opacity: 1; }
-                                }
-                                            ,
-                            State {
-                                name: ""
-                                PropertyChanges { target: txtCaps; opacity: 0; }
-                                }
-                            ]
-                        }
-                    }   
+                    }
                 }
             }
         }
-     }
          
         Rectangle {
             id: infoHost
@@ -408,9 +424,8 @@ menu_session.state = "visible"
                 * Feel free to change it 
                 *******************************************************************/
                     
-                text:sddm.hostName //textConstants.welcomeText.arg(sddm.hostName)
-                    
-                font.bold: true
+                text:sddm.hostName //textConstants.welcomeText.arg(sddm.hostName)                    
+                //font.bold: true
                 font.pixelSize: 12
             }
         } 
@@ -434,7 +449,7 @@ menu_session.state = "visible"
                     
                 horizontalAlignment: Text.AlignRight
                 color:"white"
-                font.bold: true
+                //font.bold: true
                 font.pixelSize: 12
             }
         }
