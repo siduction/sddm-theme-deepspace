@@ -57,6 +57,9 @@ Rectangle {
             x: geometry.x; y: geometry.y; width: geometry.width; height:geometry.height
             source: config.background
             fillMode: Image.PreserveAspectCrop
+            
+            KeyNavigation.backtab: user_entry; KeyNavigation.tab: user_entry
+            
             onStatusChanged: {
                 if (status == Image.Error && source != config.defaultBackground) {
                     source = config.defaultBackground
@@ -127,7 +130,7 @@ Rectangle {
                     anchors.topMargin: -80
                         
                     Text {
-                        id: txtCaps1
+                        id: txtCaps
                         anchors.horizontalCenter: parent.horizontalCenter
                         opacity: 0
                         state: keyboard.capsLock ? "activated" : ""
@@ -138,12 +141,12 @@ Rectangle {
                     states: [
                             State {
                                 name: "activated"
-                                PropertyChanges { target:txtCaps1; opacity: 1; }
+                                PropertyChanges { target:txtCaps; opacity: 1; }
                                 }
                                             ,
                             State {
                                 name: ""
-                                PropertyChanges { target: txtCaps1; opacity: 0; }
+                                PropertyChanges { target: txtCaps; opacity: 0; }
                                 }
                             ]
                         }
