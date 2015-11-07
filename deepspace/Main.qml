@@ -65,6 +65,41 @@ Rectangle {
         }
     }
     
+
+/* *****************************************************
+ * workaround for light backgrounds, 
+ * deeepspace is especially made for dark backgrounds
+ * ****************************************************/
+/* start blue box */
+
+//     Rectangle {
+//         width: parent.width; height: 34
+//         color: "#053343"
+//         border.color: "white"
+//         border.width: 0.5
+//         //opacity: 0.8 
+//         radius: 3
+//         
+//         anchors.top: parent.top
+//         anchors.horizontalCenter: parent.horizontalCenter
+//     }
+//     
+//     
+//     
+//     Rectangle {
+//         width: 612; height: 240
+//         color: "#053343"
+//         border.color: "white"
+//         border.width: 1
+//         //opacity: 0.8 
+//         radius: 13
+// 
+//         anchors.centerIn: parent
+//     }
+
+/* end blue box */
+    
+    
     Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x; y: geometry.y; width: geometry.width; height: geometry.height
@@ -80,7 +115,7 @@ Rectangle {
             /* Messages and warnings */
             Column {
 
-                anchors.top: parent.top
+                
                 anchors.centerIn: parent
                 
                 /* Capslock warning */                
@@ -100,7 +135,7 @@ Rectangle {
                         color:"white"
                         font.pixelSize: 14
                                         
-                        states: [
+                    states: [
                             State {
                                 name: "activated"
                                 PropertyChanges { target:txtCaps1; opacity: 1; }
