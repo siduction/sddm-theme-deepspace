@@ -35,11 +35,11 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
 
-        TextConstants { id: textConstants }
+         TextConstants { id: textConstants }
 
         Connections {
             target: sddm
-
+            
             onLoginSucceeded: {
                 errorMessage.color = "white"
                 errorMessage.text = textConstants.loginSucceeded
@@ -48,6 +48,7 @@ Rectangle {
             onLoginFailed: {
                 errorMessage.color = "white"
                 errorMessage.text = textConstants.loginFailed
+                errorMessage.background = "black"
             }
         }
 
@@ -75,30 +76,32 @@ Rectangle {
  * ****************************************************/
 /* start blue box */
 
-//     Rectangle {
-//         width: parent.width; height: 34
-//         color: "#053343"
-//         border.color: "white"
-//         border.width: 0.5
-//         //opacity: 0.8 
-//         radius: 3
-//         
-//         anchors.top: parent.top
-//         anchors.horizontalCenter: parent.horizontalCenter
-//     }
-//     
-//     
-//     
-//     Rectangle {
-//         width: 612; height: 240
-//         color: "#053343"
-//         border.color: "white"
-//         border.width: 1
-//         //opacity: 0.8 
-//         radius: 13
-// 
-//         anchors.centerIn: parent
-//     }
+/*
+    Rectangle {
+        width: parent.width; height: 34
+        color: "#053343"
+        border.color: "white"
+        border.width: 0.5
+        //opacity: 0.8 
+        radius: 3
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+*/
+    
+/*    
+    Rectangle {
+        width: 612; height: 165
+        color: "#053343"
+        //border.color: "white"
+        //border.width: 1
+        opacity: 0.8 
+        radius: 13
+        anchors.centerIn: parent
+        anchors.top: parent.top
+        anchors.topMargin: 90
+    }
+*/
 
 /* end blue box */
     
@@ -110,61 +113,46 @@ Rectangle {
         
         Rectangle {
 
-            width: 612; height: 120
+            width: 612; height: 165
             color: "#00000000"
-
             anchors.centerIn: parent
+
             
             /* Messages and warnings */
-            Column {
-
+           Column {
                 
                 anchors.centerIn: parent
                 
                 /* Capslock warning */                
                 Rectangle {
-                        
+                    
                     anchors.centerIn: parent
-                    anchors.fill: parent
-                    anchors.top: parent.top
-                    anchors.topMargin: -80
                         
-                    Text {
+                    CapsLock {
                         id: txtCaps
                         anchors.horizontalCenter: parent.horizontalCenter
-                        opacity: 0
-                        state: keyboard.capsLock ? "activated" : ""
-                        text: textConstants.capslockWarning
+                        anchors.top: parent.top
+                        anchors.topMargin: -65
                         color:"white"
                         font.pixelSize: 14
-                                        
-                    states: [
-                            State {
-                                name: "activated"
-                                PropertyChanges { target:txtCaps; opacity: 1; }
-                                }
-                                            ,
-                            State {
-                                name: ""
-                                PropertyChanges { target: txtCaps; opacity: 0; }
-                                }
-                            ]
                         }
                     }
                     
-                /* Login faild message */    
+                /* Login faild message */
+                        
                 Rectangle {
-                           
+
                     anchors.centerIn: parent
                     anchors.fill: parent
                     anchors.top: parent.top
-                    anchors.topMargin: -117
-                             
+                    anchors.topMargin: -100
+                                
                     Text {
                         id: errorMessage
                         anchors.horizontalCenter: parent.horizontalCenter
-                        font.pixelSize: 17
                         color:"white"
+                        font.pixelSize: 17
+                        //text: textConstants.prompt
                         }
                     }
                 }
@@ -173,6 +161,8 @@ Rectangle {
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
+                            
+
 
                 /* workaround to focus the user_entry, see below the TextBox user_entry */
             	property alias user: user_entry.text
@@ -183,6 +173,9 @@ Rectangle {
                 Column {
                         anchors.left: parent.left
                         anchors.leftMargin: 5
+                        anchors.top: parent.top
+                        anchors.topMargin: 25
+                        
                         height: 51                    
                         
                         Row {
@@ -238,12 +231,14 @@ Rectangle {
                                 ******************************************************************************/ 
                                 
                                 /* start hack */
+                                
                                 Timer {
                                     interval: 200
                                     running: true
                                     repeat: false
                                     onTriggered: user_entry.forceActiveFocus()
                                 }
+                                
                                 /* end hack */
                                 
                                 width: 250; height: 30
@@ -278,12 +273,14 @@ Rectangle {
                                     * **************************************************************/
                                     
                                     /* start hack */
-                                    //Timer {
-                                    //	interval: 200
-                                    //	running: true
-                                    //	repeat: false
-                                    //	onTriggered: pw_entry.forceActiveFocus()
-                                    //}
+                                    /*
+                                    Timer {
+                                    	interval: 200
+                                    	running: true
+                                    	repeat: false
+                                    	onTriggered: pw_entry.forceActiveFocus()
+                                    }
+                                    */
                                     /* end hack */
                                     
                                 width: 250; height: 30
@@ -311,18 +308,20 @@ Rectangle {
                                     KeyNavigation.backtab: pw_entry; KeyNavigation.tab: session_button
                                 }
                                 
-                            /* tooltips for the input fields */    
-                                
-                            //ToolTip { /* no translation or text avialable */
+                            /* tooltips for the input fields */ 
+                            
+                            /* no translation or text avialable */                            
+                            //ToolTip { 
                             //    id: tooltip0
                             //    target: user_entry
-                            //    text: textConstants.prompt
+                            //    text: textConstants.promptUser
                             //    }
-                                
-                            //ToolTip { /* no translation or text avialable */
+                            
+                            /* no translation or text avialable */
+                            //ToolTip { 
                             //    id: tooltip1
                             //    target: pw_entry
-                            //    text: textConstants.prompt
+                            //    text: textConstants.promptPassword
                             //    }
                                 
                             ToolTip {
@@ -336,9 +335,10 @@ Rectangle {
                     Item {
                         
                         width: 512; height: 36 
-                        anchors.bottom: parent.bottom
+                        anchors.top: parent.top
                         anchors.left: parent.left; anchors.right: parent.right
                         anchors.leftMargin:5
+                        anchors.topMargin: 66
                         
                         /* tooltips buttonRow */
                         ToolTip {
@@ -515,5 +515,5 @@ menu_session.state = "visible"
                 pw_entry.focus = true
         }
     }
-}
+    }
                                                                                 

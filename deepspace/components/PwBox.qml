@@ -37,7 +37,6 @@ FocusScope {
     property alias textColor: txtMain.color
     property alias echoMode: txtMain.echoMode
     property alias text: txtMain.text
-
     
     TextConstants {
         id: textConstants
