@@ -87,7 +87,7 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
             anchors {fill: parent; margins: 5}
             wrapMode: Text.WrapAnywhere 
             color: "white"
-            font.bold: true
+            //font.bold: true
             }
         }
     }

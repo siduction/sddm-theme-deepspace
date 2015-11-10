@@ -258,7 +258,7 @@ Rectangle {
                                 * "RememberLastUser=true",
                                 * also take a look to the pw_entry section below!
                                 ************************************************************************/
-
+                               
                                 //text: userModel.lastUser
 
                                 font.pixelSize: 14
@@ -311,8 +311,22 @@ Rectangle {
                                     KeyNavigation.backtab: pw_entry; KeyNavigation.tab: session_button
                                 }
                                 
+                            /* tooltips for the input fields */    
+                                
+                            //ToolTip { /* no translation or text avialable */
+                            //    id: tooltip0
+                            //    target: user_entry
+                            //    text: textConstants.prompt
+                            //    }
+                                
+                            //ToolTip { /* no translation or text avialable */
+                            //    id: tooltip1
+                            //    target: pw_entry
+                            //    text: textConstants.prompt
+                            //    }
+                                
                             ToolTip {
-                                id: tooltip0
+                                id: tooltip2
                                 target: login_button
                                 text: textConstants.login
                                 }
@@ -326,34 +340,36 @@ Rectangle {
                         anchors.left: parent.left; anchors.right: parent.right
                         anchors.leftMargin:5
                         
+                        /* tooltips buttonRow */
                         ToolTip {
-                            id: tooltip1
+                            id: tooltip3
                                 target: session_button
                                 text: textConstants.session
+                                //font.bold: true
                                 }
                                 
                         ToolTip {
-                            id: tooltip2
+                            id: tooltip4
                                 target: system_button
                                 text: textConstants.shutdown
                                 }
                                 
                         ToolTip {
-                            id: tooltip3
+                            id: tooltip5
                                 target: reboot_button
                                 text: textConstants.reboot
                                 }
                                 
-                        /* there is no translation in sddm for it, or i can't find it */
+                        /* there is no translation in sddm for it */
                         ToolTip {
-                            id: tooltip4
+                            id: tooltip6
                                 target: suspend_button
-                                text: "Suspend" //textConstants.suspend
+                                text: "Suspend" // textConstants.suspend
                                 }
                                 
-                        /* there is no translation in sddm for it, or i can't find it */        
+                        /* there is no translation in sddm for it */        
                         ToolTip {
-                            id: tooltip5
+                            id: tooltip7
                                 target: hibernate_button
                                 text: "Hibernate" //textConstants.hibernate
                                 }
