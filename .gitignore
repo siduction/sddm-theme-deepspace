@@ -1,0 +1,5 @@
+debian/*.log
+debian/*.substvars
+
+debian/sddm-theme-deepspace
+debian/sddm-theme-paintitblack
