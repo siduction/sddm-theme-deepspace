@@ -260,7 +260,7 @@ Rectangle {
                                 font.pixelSize: 14
                                 radius: 3
 
-                                KeyNavigation.backtab: user_entry; KeyNavigation.tab: pw_entry
+                                KeyNavigation.backtab: login_button; KeyNavigation.tab: pw_entry
                             }
 
                             PwBox {
@@ -289,7 +289,7 @@ Rectangle {
                                 font.pixelSize: 14
                                 radius: 3
 
-                                KeyNavigation.backtab: user_entry; KeyNavigation.tab: login_button
+                                KeyNavigation.backtab: user_entry; KeyNavigation.tab: session_button
 
                                 Keys.onPressed: {
                                     if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
@@ -393,7 +393,7 @@ Rectangle {
                                 onClicked: if (menu_session.state === "visible") menu_session.state = ""; else 
 menu_session.state = "visible"
 
-                                KeyNavigation.backtab: login_button; KeyNavigation.tab: system_button
+                                KeyNavigation.backtab: pw_entry; KeyNavigation.tab: system_button
 
                             }
 
@@ -432,7 +432,7 @@ menu_session.state = "visible"
                                 visible: sddm.canHibernate
                                 onClicked: sddm.hibernate()
 
-                                KeyNavigation.backtab: suspend_button; KeyNavigation.tab: user_entry
+                                KeyNavigation.backtab: suspend_button; KeyNavigation.tab: login_button
                             }
                             
                             ImageButton {
@@ -442,7 +442,7 @@ menu_session.state = "visible"
             
                                     onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
             
-                                    KeyNavigation.backtab:  pw_entry; KeyNavigation.tab: user_entry
+                                    KeyNavigation.backtab:  hibernate_button; KeyNavigation.tab: user_entry
                                 }
                         }
                         
