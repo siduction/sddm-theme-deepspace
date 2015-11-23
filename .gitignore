@@ -1,5 +1,9 @@
+debian/files
 debian/*.log
 debian/*.substvars
 
 debian/sddm-theme-deepspace
 debian/sddm-theme-paintitblack
+debian/sddm-theme-thunderstruck/
+debian/sddm-theme-whiteroom/
+
