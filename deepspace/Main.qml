@@ -49,6 +49,7 @@ Rectangle {
                 errorMessage.color = "white"
                 errorMessage.text = textConstants.loginFailed
                 errorMessage.background = "black"
+                listView.currentItem.password.text = ""
             }
         }
 
