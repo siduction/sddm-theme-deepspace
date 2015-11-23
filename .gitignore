@@ -1,3 +1,5 @@
+*.swp
+
 debian/files
 debian/*.log
 debian/*.substvars
