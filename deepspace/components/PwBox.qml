@@ -1,4 +1,5 @@
 /***************************************************************************
+* Copyright (c) 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
 * Copyright (c) 2013 Nikita Mikhaylov <nslqqq@gmail.com>
 *
 * Permission is hereby granted, free of charge, to any person
