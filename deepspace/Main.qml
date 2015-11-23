@@ -60,7 +60,7 @@ Rectangle {
             source: config.background
             fillMode: Image.PreserveAspectCrop
             
-            KeyNavigation.backtab: user_entry; KeyNavigation.tab: user_entry
+            KeyNavigation.backtab: pw_entry; KeyNavigation.tab: user_entry
             
             onStatusChanged: {
                 if (status == Image.Error && source != config.defaultBackground) {
@@ -298,16 +298,6 @@ Rectangle {
                                     }
                                 }
                             }
-                            
-                            ImageButton {
-                                id: login_button
-                                height: 32
-                                source: "images/login_normal.png"                                                    
-            
-                                    onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
-            
-                                    KeyNavigation.backtab: pw_entry; KeyNavigation.tab: session_button
-                                }
                                 
                             /* tooltips for the input fields */ 
                             
@@ -324,12 +314,7 @@ Rectangle {
                             //    target: pw_entry
                             //    text: textConstants.promptPassword
                             //    }
-                                
-                            ToolTip {
-                                id: tooltip2
-                                target: login_button
-                                text: textConstants.login
-                                }
+
                             }
                         }
 
@@ -342,6 +327,13 @@ Rectangle {
                         anchors.topMargin: 66
                         
                         /* tooltips buttonRow */
+                        
+                        ToolTip {
+                                id: tooltip2
+                                target: login_button
+                                text: textConstants.login
+                                }
+                                
                         ToolTip {
                             id: tooltip3
                                 target: session_button
@@ -442,6 +434,16 @@ menu_session.state = "visible"
 
                                 KeyNavigation.backtab: suspend_button; KeyNavigation.tab: user_entry
                             }
+                            
+                            ImageButton {
+                                id: login_button
+                                height: 32
+                                source: "images/login_normal.png"                                                    
+            
+                                    onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
+            
+                                    KeyNavigation.backtab:  pw_entry; KeyNavigation.tab: user_entry
+                                }
                         }
                         
                             SessionMenu {
