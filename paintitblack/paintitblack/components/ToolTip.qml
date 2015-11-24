@@ -40,7 +40,7 @@ Item {
  property alias textColor: toolTip.color
  property alias font: toolTip.font
  property var target: null
- 
+
 function onMouseHover(x, y)
  {
  var obj = toolTipRoot.target.mapToItem(toolTipRoot.parent, x, y);
@@ -61,33 +61,45 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
 {mouserHover(mouseX, mouseY)} onEntered: {showChanged(true)} onExited:{showChanged(false)}}',
  itemParent, "mouseItem");
  newObject.mouserHover.connect(onMouseHover);
- newObject.showChanged.connect(onVisibleStatus);
+ newObject.showChanged.connect(onVisibleStatus); 
  }
  
-Item {
- id: toolTipContainer
- z: toolTipRoot.z + 1
- width: content.width
- height: content.height
- 
-Rectangle {
- id: content
- anchors.centerIn: parent
- width: toolTip.contentWidth + 10
- height: toolTip.contentHeight + 10
- color:  "CornflowerBlue"
- border.color: "black"
- border.width: 1
- opacity: 0.7 
- radius: 3
- 
-Text {
- id: toolTip
- anchors {fill: parent; margins: 5}
- wrapMode: Text.WrapAnywhere 
- }
- }
- }
- 
-Behavior on visible { NumberAnimation { duration: 200 }}
+    Item {
+        
+    id: toolTipContainer
+    z: toolTipRoot.z + 1
+    width: content.width
+    height: content.height
+    
+        Rectangle {
+        id: content
+        anchors.centerIn: parent
+        width: toolTip.contentWidth + 10
+        height: toolTip.contentHeight + 10
+        color: "#053343"
+        border.color: "white"
+        border.width: 1
+        opacity: 0.8 
+        radius: 3
+        
+            Text {
+            id: toolTip
+            anchors {fill: parent; margins: 5}
+            wrapMode: Text.WrapAnywhere 
+            color: "white"
+            //font.bold: true
+            }
+        }
+    }
+
+    NumberAnimation {
+        id: fadein
+        target: toolTipContainer
+        property: "opacity"
+        easing.type: Easing.InOutQuad
+        duration: 1000
+        from: 0
+        to: 1
+    }
+    onVisibleChanged: if(visible)fadein.start();
 }
