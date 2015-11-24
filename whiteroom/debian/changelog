@@ -1,0 +1,11 @@
+sddm-theme-whiteroom (2015.11.24-1) unstable; urgency=medium
+
+  * Added some postinst and prerm scripts
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 14:16:25 +0200
+
+sddm-theme-whiteroom (2015.10.18-1) unstable; urgency=medium
+
+  * Initial release
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 00:30:54 +0200
