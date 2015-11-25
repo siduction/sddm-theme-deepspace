@@ -76,10 +76,10 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
         anchors.centerIn: parent
         width: toolTip.contentWidth + 10
         height: toolTip.contentHeight + 10
-        color: "#053343"
+        color: "#333335" //"#053343"
         border.color: "white"
         border.width: 1
-        opacity: 0.8 
+        opacity: 0.9 
         radius: 3
         
             Text {

@@ -77,32 +77,35 @@ Rectangle {
  * ****************************************************/
 /* start blue box */
 
-/*
+
     Rectangle {
         width: parent.width; height: 34
-        color: "#053343"
-        border.color: "white"
-        border.width: 0.5
-        //opacity: 0.8 
+        color: "#333335" //"#053343"
+        //border.color: "white"
+        //border.width: 0.5
+        opacity: 0.8 
         radius: 3
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }
-*/
+
     
-/*    
+    
     Rectangle {
         width: 612; height: 165
-        color: "#053343"
+        color: "#333335" //"darkgrey" //"#053343"
         //border.color: "white"
         //border.width: 1
-        opacity: 0.8 
-        radius: 13
-        anchors.centerIn: parent
+        opacity: 0.9 
+        radius: 7
+//         anchors.centerIn: parent
+//         anchors.top: parent.top
+//         anchors.topMargin: 90
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: 90
+        anchors.topMargin: 125
     }
-*/
+
 
 /* end blue box */
     
@@ -116,7 +119,10 @@ Rectangle {
 
             width: 612; height: 165
             color: "#00000000"
-            anchors.centerIn: parent
+            //anchors.centerIn: parent
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 150
 
             
             /* Messages and warnings */

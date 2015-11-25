@@ -1,4 +1,4 @@
-Source: sddm-theme-whiteroom
+Source: sddm-theme-paintitblack
 Maintainer: Alf Gaida <agaida@siduction.org>
 Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
@@ -9,12 +9,13 @@ Standards-Version: 3.9.6
 #Vcs-Git: git://
 #Homepage: https://github.com/lxde/lxqt-about
 
-Package: sddm-theme-whiteroom
+Package: sddm-theme-paintitblack
 Architecture: any
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+         qml-module-qtgraphicaleffects
 Recommends: sddm
 Provides: sddm-theme
-Description: Whiteroom theme for sddm
- Siduction whiteroom sddm theme.
+Description: Paintitblack theme for sddm
+ Siduction Paintitblack sddm theme.
  .
  This package contain a Siduction sddm theme.
