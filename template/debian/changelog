@@ -1,11 +1,5 @@
-sddm-theme-paintitblack (2015.11.24-1) unstable; urgency=medium
-
-  * Added some postinst and prerm scripts
-
- -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 14:16:25 +0200
-
-sddm-theme-paintitblack (2015.10.18-1) unstable; urgency=medium
+sddm-theme-@THEMENAME@ (2015.11.24-1) unstable; urgency=medium
 
   * Initial release
 
- -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 00:30:54 +0200
+ -- Alf Gaida <agaida@siduction.org>  Tue, 24 Nov 2015 00:27:35 +0100

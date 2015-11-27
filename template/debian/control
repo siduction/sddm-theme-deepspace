@@ -1,4 +1,4 @@
-Source: sddm-theme-paintitblack
+Source: sddm-theme-@THEMENAME@
 Maintainer: Alf Gaida <agaida@siduction.org>
 Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
@@ -9,13 +9,13 @@ Standards-Version: 3.9.6
 #Vcs-Git: git://
 #Homepage: https://github.com/lxde/lxqt-about
 
-Package: sddm-theme-paintitblack
+Package: sddm-theme-@THEMENAME@
 Architecture: any
 Depends: ${misc:Depends},
          qml-module-qtgraphicaleffects
 Recommends: sddm
 Provides: sddm-theme
-Description: Paintitblack theme for sddm
- Siduction Paintitblack sddm theme.
+Description: @THEMENAME@ theme for sddm
+ Siduction @THEMENAME@ sddm theme.
  .
- This package contain a Siduction sddm theme.
+ This package contain a sddm theme.

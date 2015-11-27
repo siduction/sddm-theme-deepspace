@@ -1,2 +1,2 @@
-paintitblack usr/share/sddm/themes
+@THEMENAME@ usr/share/sddm/themes/
 etc
