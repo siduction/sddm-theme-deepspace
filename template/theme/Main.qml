@@ -92,7 +92,7 @@ Rectangle {
     Rectangle {
         width: 612
         height: 165
-        color: "@BOXCOLOR@@" //"darkgrey" //"#053343"
+        color: "@BOXCOLOR@" //"darkgrey" //"#053343"
         // border.color: "white"
         // border.width: 1
         opacity: 0.9

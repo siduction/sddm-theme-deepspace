@@ -1,4 +1,4 @@
-Source: sddm-theme-@THEMENAME@
+Source: sddm-theme-thunderstruck
 Maintainer: Alf Gaida <agaida@siduction.org>
 Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
@@ -9,13 +9,13 @@ Standards-Version: 3.9.6
 #Vcs-Git: git://
 #Homepage: https://github.com/lxde/lxqt-about
 
-Package: sddm-theme-@THEMENAME@
+Package: sddm-theme-thunderstruck
 Architecture: any
 Depends: ${misc:Depends},
          qml-module-qtgraphicaleffects
 Recommends: sddm
 Provides: sddm-theme
-Description: @THEMENAME@ theme for sddm
- Siduction @THEMENAME@ sddm theme.
+Description: thunderstruck theme for sddm
+ Siduction thunderstruck sddm theme.
  .
  This package contain a sddm theme.

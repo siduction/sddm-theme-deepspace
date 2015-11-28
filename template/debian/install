@@ -1,2 +1,2 @@
-@THEMENAME@ usr/share/sddm/themes/
+@CODENAME_SAFE@ usr/share/sddm/themes/
 etc

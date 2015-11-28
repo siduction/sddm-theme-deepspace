@@ -8,14 +8,6 @@ function source_version_info {
         echo "No VERSION-File, exit!"
         exit 1
     fi
- 
-    if [ -f FLAVOUR ]; then
-        . ./FLAVOUR
-    else
-        echo "No FLAVOUR-File, exit!"
-        exit 1
-    fi
- 
 }
  
  
@@ -56,7 +48,8 @@ function debian_changelog {
             -e "s/\@VERSION\@/${VERSION}/g" \
             -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
             -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-            templates/debian/changelog \
+            -e "s/\@THEMENAME@/${THEMENAME}/g" \
+            ../template/debian/changelog \
             > debian/changelog
     fi
 }
@@ -70,7 +63,8 @@ function basic_control {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/debian/${1}-control \
+        -e "s/\@THEMENAME@/${THEMENAME}/g" \
+        ../template/debian/control \
         > debian/control
 }
  
@@ -83,13 +77,14 @@ function debian_rules {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/debian/rules \
+        -e "s/\@THEMENAME@/${THEMENAME}/g" \
+        ../template/debian/rules \
         > debian/rules
     chmod 755 debian/rules
 }
  
 # debian foo basics
 function debian_foo_basics {
-    cp -a templates/debian/source debian
-    cp    templates/debian/compat debian
+    cp -a ../template/debian/source debian
+    cp    ../template/debian/compat debian
 }

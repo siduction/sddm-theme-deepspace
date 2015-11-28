@@ -9,9 +9,9 @@ case "$1" in
     configure)
         # keep the old configuration
 #       if [ -f /etc/sddm.conf ]; then
-#           cp -f /usr/share/sddm/themes/@THEMENAME@/sddm.conf /etc/sddm.conf.dpkg-new
+#           cp -f /usr/share/sddm/themes/@CODENAME_SAFE@/sddm.conf /etc/sddm.conf.dpkg-new
 #       else
-#           cp -f /usr/share/sddm/themes/@THEMENAME@/sddm.conf /etc/sddm.conf
+#           cp -f /usr/share/sddm/themes/@CODENAME_SAFE@/sddm.conf /etc/sddm.conf
 #       fi
     ;;
 

@@ -6,6 +6,8 @@ DESCRIPTION='Thunderstruck'
 VERSION=2015.1.0
 DISTRIBUTION=unstable
 
+
+# sddm.conf
 RELOGIN=yes
 AUTOSESSION=
 AUTOUSER=
@@ -14,3 +16,13 @@ THEMENAME=thunderstruck
 CURSORTHEME=adwaita
 REMEMBERLASTSESSION=no
 REMEMBERLASTUSER=no
+
+# Main.qml
+BOXCOLOR=green
+BOXTOPMARGIN=400
+
+# metadata.desktop
+SCREENSHOT=preview
+
+#theme.conf
+BACKGROUND=background.jpg

@@ -1,6 +1,6 @@
 [SddmGreeterTheme]
-Name=@THEMENAME@
-Description=@THEMENAME@ sddm theme, based on elarun SddmGreeterTheme.
+Name=@CODENAME_SAFE@
+Description=@CODENAME_SAFE@ sddm theme, based on elarun SddmGreeterTheme.
 Type=sddm-theme
 Author=Hendrik Lehmbruch
 Copyright=2015, Hendrik Lehmbruch
@@ -10,6 +10,6 @@ Version=0.1
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
-Theme-Id=@THEMENAME@
+Theme-Id=@CODENAME_SAFE@
 Theme-API=2.0
 Website=https://github.com/sddm/sddm
