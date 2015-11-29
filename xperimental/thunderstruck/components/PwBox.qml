@@ -1,6 +1,6 @@
 /***************************************************************************
-* Copyright (c) 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
-* Copyright (c) 2013 Nikita Mikhaylov <nslqqq@gmail.com>
+* Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
+*            2013 Nikita Mikhaylov <nslqqq@gmail.com>
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
@@ -38,10 +38,10 @@ FocusScope {
     property alias textColor: txtMain.color
     property alias echoMode: txtMain.echoMode
     property alias text: txtMain.text
-    
+
     TextConstants {
         id: textConstants
-    }    
+    }
 
     TextBox {
         id: txtMain
@@ -53,5 +53,3 @@ FocusScope {
         focus: true
     }
 }
-
-

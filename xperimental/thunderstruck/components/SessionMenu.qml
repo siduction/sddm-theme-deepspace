@@ -1,6 +1,6 @@
 /***************************************************************************
-* Copyright (c) 2013 Reza Fatahilah Shah <rshah0385@kireihana.com>
-* Copyright (c) 2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
+* Copyright: 2013 Reza Fatahilah Shah <rshah0385@kireihana.com>
+*            2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
@@ -48,7 +48,7 @@ Rectangle {
         id: listViewItem
 
         Rectangle {
-            color: mouseArea.containsMouse ? "#FF4500": "transparent"   //"steelblue" : "transparent"         
+            color: mouseArea.containsMouse ? "#FF4500": "transparent"   //"steelblue" : "transparent"
             radius: 3
             width: parent.width; height: menu.itemHeight
 
@@ -75,18 +75,17 @@ Rectangle {
             Keys.onReturnPressed: { itemClicked(index); menu.state = "" }
         }
     }
-    
+
 
 
         ListView {
             id: menuList
-                
-            anchors.fill: parent                
+
+            anchors.fill: parent
             clip: true
             delegate: listViewItem
             highlight: Rectangle { color: "#FF4500"
             radius: 3 /*"lightsteelblue"*/ }
         }
-        
-}
 
+}

@@ -1,5 +1,5 @@
 /***************************************************************************
-+ Copyright (c) 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
++ Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
@@ -26,7 +26,7 @@ import QtQuick 2.0
 import SddmComponents 2.0
 
  Item {
-     
+
     id: txtCapsContainer
     width: txtCapsContent.width
     height: txtCapsContent.height
@@ -37,9 +37,9 @@ import SddmComponents 2.0
     property alias text: txtCaps.text
 
     TextConstants {
-        id: textConstants        
+        id: textConstants
     }
-    
+
     Rectangle {
         id: txtCapsContent
         anchors.centerIn: parent
@@ -49,15 +49,15 @@ import SddmComponents 2.0
         color: "transparent" // "#053343"
         //border.color: "white"
         //border.width: 1
-        radius: 3    
-    
+        radius: 3
+
         Text {
             id: txtCaps
             anchors {fill: parent; margins: 5}
             wrapMode: Text.WrapAnywhere
             state: keyboard.capsLock ? "activated" : ""
             text: textConstants.capslockWarning
-                                            
+
             states: [
                 State {
                 name: "activated"

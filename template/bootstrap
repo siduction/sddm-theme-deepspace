@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
- 
- 
+
+
 . ../template/functions.sh
- 
+
 source_version_info
 debian_changelog
 cleanup_old_builds
@@ -11,8 +11,6 @@ debian_cleanup
 debian_foo_basics
 basic_control
 debian_rules
-
-
 
 # debian/install
 sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
@@ -25,10 +23,9 @@ sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     > debian/postinst
 
 # debian/copyright
-sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+sed -e "s%\@CODENAME_SAFE\@%${CODENAME_SAFE}%g" \
     ../template/debian/copyright \
     > debian/copyright
-
 
 #etc
 rm -r etc/*
@@ -51,6 +48,10 @@ cp -a ../template/theme/* ${CODENAME_SAFE}
 sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     -e "s/\@BOXCOLOR\@/${BOXCOLOR}/g" \
     -e "s/\@BOXTOPMARGIN\@/${BOXTOPMARGIN}/g" \
+    -e "s/\@BOXWIDTH\@/${BOXWIDTH}/g" \
+    -e "s/\@BOXHEIGTH\@/${BOXHEIGTH}/g" \
+    -e "s/\@BOXOPACITY\@/${BOXOPACITY}/g" \
+    -e "s/\@BOXRADIUS\@/${BOXRADIUS}/g" \
     ../template/theme/Main.qml \
     > ${CODENAME_SAFE}/Main.qml
 

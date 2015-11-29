@@ -1,5 +1,5 @@
 /***************************************************************************
-+ Copyright (c) 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
++ Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
@@ -25,7 +25,7 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.1
 import QtGraphicalEffects 1.0
- 
+
 Item {
  id: toolTipRoot
  width: toolTip.contentWidth
@@ -33,7 +33,7 @@ Item {
  visible: false
  clip: false
  z: 999999999
- 
+
  property alias text: toolTip.text
  property alias radius: content.radius
  property alias backgroundColor: content.color
@@ -47,30 +47,30 @@ function onMouseHover(x, y)
  toolTipRoot.x = obj.x + 5;
  toolTipRoot.y = obj.y - 30;
  }
- 
+
 function onVisibleStatus(flag)
  {
  toolTipRoot.visible = flag;
  }
- 
+
 Component.onCompleted: {
  var itemParent = toolTipRoot.target;
- 
-var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal 
-showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged: 
+
+var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal
+showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged:
 {mouserHover(mouseX, mouseY)} onEntered: {showChanged(true)} onExited:{showChanged(false)}}',
  itemParent, "mouseItem");
  newObject.mouserHover.connect(onMouseHover);
- newObject.showChanged.connect(onVisibleStatus); 
+ newObject.showChanged.connect(onVisibleStatus);
  }
- 
+
     Item {
-        
+
     id: toolTipContainer
     z: toolTipRoot.z + 1
     width: content.width
     height: content.height
-    
+
         Rectangle {
         id: content
         anchors.centerIn: parent
@@ -79,13 +79,13 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
         color: "#333335" //"#053343"
         border.color: "white"
         border.width: 1
-        opacity: 0.9 
+        opacity: 0.9
         radius: 3
-        
+
             Text {
             id: toolTip
             anchors {fill: parent; margins: 5}
-            wrapMode: Text.WrapAnywhere 
+            wrapMode: Text.WrapAnywhere
             color: "white"
             //font.bold: true
             }

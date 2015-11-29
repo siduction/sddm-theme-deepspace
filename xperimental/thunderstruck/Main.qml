@@ -96,19 +96,19 @@ Rectangle {
         color: "transparent"
 
         Rectangle {
-            width: @BOXWIDTH@ // 565
-            height: @BOXHEIGTH@ // 165
+            width: 565
+            height: 165
             color: "#00000000"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: @BOXTOPMARGIN@ // 150
+            anchors.topMargin: 150
 
             Rectangle {
                 width: parent.width
                 height: parent.height
-                color: @BOXCOLOR@ // "#303030"
-                opacity: @BOXOPACITY@ // 0.8
-                radius: @BOXRADIUS@ //12
+                color: "#303030"
+                opacity: 0.8
+                radius: 12
                 anchors.top: parent.top
                 anchors.left: parent.left
             }
@@ -128,7 +128,7 @@ Rectangle {
                         anchors.horizontalCenter: parent.horizontalCenter
                         anchors.top: parent.top
                         anchors.topMargin: -65
-                        color:"white"
+                        color: "white"
                         font.pixelSize: 14
                         }
                     }
