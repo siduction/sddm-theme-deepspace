@@ -1,5 +1,5 @@
 #!/bin/bash
- 
+
 WALLPAPER=thunderstruck
 CODENAME_SAFE=thunderstruck
 DESCRIPTION='Thunderstruck'
@@ -18,11 +18,15 @@ REMEMBERLASTSESSION=no
 REMEMBERLASTUSER=no
 
 # Main.qml
-BOXCOLOR=green
-BOXTOPMARGIN=400
+BOXWIDTH= 565
+BOXHEIGTH= 165
+BOXTOPMARGIN= 150
+BOXCOLOR="#303030"
+BOXOPACITY=0.8
+BOXRADIUS=12
 
 # metadata.desktop
-SCREENSHOT=preview
+PREVIEW="images/preview.jpg"
 
 #theme.conf
-BACKGROUND=background.jpg
+BACKGROUND="images/background.jpg"

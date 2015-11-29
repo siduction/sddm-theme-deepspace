@@ -72,17 +72,15 @@ Rectangle {
     }
 
 
-/* *****************************************************
- * workaround for light backgrounds,
- * deeepspace is especially made for dark backgrounds
- * ****************************************************/
+    /* *****************************************************
+    * workaround for light backgrounds,
+    * deeepspace is especially made for dark backgrounds
+    * ****************************************************/
     /* start blue box */
     Rectangle {
         width: parent.width
         height: 34
         color: "#333335" //"#053343"
-        //border.color: "white"
-        //border.width: 0.5
         opacity: 0.8
         radius: 3
         anchors.top: parent.top
@@ -90,36 +88,30 @@ Rectangle {
     }
 
     Rectangle {
-        width: 612
-        height: 165
-        color: "green" //"darkgrey" //"#053343"
-        // border.color: "white"
-        // border.width: 1
-        opacity: 0.9
-        radius: 7
-        // anchors.centerIn: parent
-        // anchors.top: parent.top
-        // anchors.topMargin: 90
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: parent.top
-        anchors.topMargin: 400
-    }
-    /* end blue box */
-
-    Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
-        x: geometry.x; y: geometry.y; width: geometry.width; height: geometry.height
+        x: geometry.x
+        y: geometry.y
+        width: geometry.width
+        height: geometry.height
         color: "transparent"
 
         Rectangle {
-
-            width: 612; height: 165
+            width: @BOXWIDTH@ // 565
+            height: @BOXHEIGTH@ // 165
             color: "#00000000"
-            //anchors.centerIn: parent
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: 150
+            anchors.topMargin: @BOXTOPMARGIN@ // 150
 
+            Rectangle {
+                width: parent.width
+                height: parent.height
+                color: @BOXCOLOR@ // "#303030"
+                opacity: @BOXOPACITY@ // 0.8
+                radius: @BOXRADIUS@ //12
+                anchors.top: parent.top
+                anchors.left: parent.left
+            }
 
             /* Messages and warnings */
             Column {
@@ -147,7 +139,7 @@ Rectangle {
                     anchors.centerIn: parent
                     anchors.fill: parent
                     anchors.top: parent.top
-                    anchors.topMargin: -100
+                    anchors.topMargin: -80
 
                     Text {
                         id: errorMessage
@@ -165,9 +157,9 @@ Rectangle {
                 anchors.fill: parent
 
                 /* workaround to focus the user_entry, see below the TextBox user_entry */
-            	property alias user: user_entry.text
+                property alias user: user_entry.text
 
-            	/* workaround to focus pw_entry if needed */
+                /* workaround to focus pw_entry if needed */
                 property alias password: pw_entry.text
 
                 Column {
