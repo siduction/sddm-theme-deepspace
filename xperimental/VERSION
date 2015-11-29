@@ -29,4 +29,4 @@ BOXRADIUS=12
 PREVIEW="images/preview.jpg"
 
 #theme.conf
-BACKGROUND="images/background.jpg"
+BACKGROUND="/usr/share/wallpapers/thunderstruck/contents/images/1920x1200.jpg"
