@@ -2,38 +2,65 @@
 set -e
  
  
-. templates/functions.sh
+. ../template/functions.sh
  
 source_version_info
 debian_changelog
 cleanup_old_builds
 debian_cleanup
 debian_foo_basics
-basic_control xorg
+basic_control
 debian_rules
- 
-# xorg
-# ====
-if $XORG; then
-    sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/debian/xorg-settings.install \
-        > debian/${CODENAME_SAFE}-xorg-settings.install
-    sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/debian/xorg-settings.postinst \
-        > debian/${CODENAME_SAFE}-xorg-settings.postinst
-    sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/debian/xorg-settings.postrm \
-        > debian/${CODENAME_SAFE}-xorg-settings.postrm
- 
-    sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
-        templates/xorg/etc/skel/fluxbox/lastwallpaper \
-                > xorg/etc/skel/fluxbox/lastwallpaper
-fi
- 
-grub_template xorg
- 
+
+
+
+# debian/install
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    ../template/debian/install \
+    > debian/install
+
+# debian/postinst
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    ../template/debian/postinst \
+    > debian/postinst
+
+# debian/copyright
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    ../template/debian/copyright \
+    > debian/copyright
+
+
+#etc
+rm -r etc/*
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    -e "s/\@RELOGIN\@/${RELOGIN}/g" \
+    -e "s/\@AUTOSESSION\@/${AUTOSESSION}/g" \
+    -e "s/\@AUTOUSER\@/${AUTOUSER}/g" \
+    -e "s/\@NUMLOCK\@/${NUMLOCK}/g" \
+    -e "s/\@CURSORTHEME\@/${CURSORTHEME}/g" \
+    -e "s/\@REMEMBERLASTSESSION\@/${REMEMBERLASTSESSION}/g" \
+    -e "s/\@REMEMBERLASTUSER\@/${REMEMBERLASTUSER}/g" \
+    ../template/etc/sddm.conf \
+    > etc/sddm-${CODENAME_SAFE}.conf
+
+#theme
+rm -rf ${CODENAME_SAFE}
+mkdir ${CODENAME_SAFE}
+cp -a ../template/theme/* ${CODENAME_SAFE}
+
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    -e "s/\@BOXCOLOR\@/${BOXCOLOR}/g" \
+    -e "s/\@BOXTOPMARGIN\@/${BOXTOPMARGIN}/g" \
+    ../template/theme/Main.qml \
+    > ${CODENAME_SAFE}/Main.qml
+
+sed -e "s#\@CODENAME_SAFE\@#${CODENAME_SAFE}#g" \
+    -e "s#\@PREVIEW\@#${PREVIEW}#g" \
+    ../template/theme/metadata.desktop \
+    > ${CODENAME_SAFE}/metadata.desktop
+
+sed -e "s#\@BACKGROUND\@#${BACKGROUND}#g" \
+    ../template/theme/theme.conf \
+    > ${CODENAME_SAFE}/theme.conf
+
 exit 0

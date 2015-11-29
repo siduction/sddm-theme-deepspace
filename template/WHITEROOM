@@ -1,7 +1,0 @@
-#!/bin/bash
- 
-WALLPAPER=whiteroom
-CODENAME_SAFE=whiteroom
-DESCRIPTION='White ROOM'
-VERSION=2015.1.0
-DISTRIBUTION=unstable

@@ -30,8 +30,6 @@ sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     > debian/copyright
 
 
-
-
 #etc
 rm -r etc/*
 sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
@@ -56,13 +54,12 @@ sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     ../template/theme/Main.qml \
     > ${CODENAME_SAFE}/Main.qml
 
-sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
-    -e "s/\@SCREENSHOT\@/${SCREENSHOT}/g" \
+sed -e "s#\@CODENAME_SAFE\@#${CODENAME_SAFE}#g" \
+    -e "s#\@PREVIEW\@#${PREVIEW}#g" \
     ../template/theme/metadata.desktop \
     > ${CODENAME_SAFE}/metadata.desktop
 
-
-sed -e "s/\@BACKGROUND\@/${BACKGROUND}/g" \
+sed -e "s#\@BACKGROUND\@#${BACKGROUND}#g" \
     ../template/theme/theme.conf \
     > ${CODENAME_SAFE}/theme.conf
 

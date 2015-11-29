@@ -1,0 +1,28 @@
+#!/bin/bash
+ 
+WALLPAPER=whiteroom
+CODENAME_SAFE=whiteroom
+DESCRIPTION='White Room'
+VERSION=2015.1.0
+DISTRIBUTION=unstable
+
+
+# sddm.conf
+RELOGIN=yes
+AUTOSESSION=
+AUTOUSER=
+NUMLOCK=on
+THEMENAME=thunderstruck
+CURSORTHEME=adwaita
+REMEMBERLASTSESSION=no
+REMEMBERLASTUSER=no
+
+# Main.qml
+BOXCOLOR=green
+BOXTOPMARGIN=150
+
+# metadata.desktop
+PREVIEW=images/preview.jpg
+
+#theme.conf
+BACKGROUND=images/background.jpg
