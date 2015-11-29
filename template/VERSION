@@ -1,8 +1,8 @@
 #!/bin/bash
- 
-WALLPAPER=whiteroom
-CODENAME_SAFE=whiteroom
-DESCRIPTION='White Room'
+
+WALLPAPER=@CODENAME_SAFE@
+CODENAME_SAFE=@CODENAME_SAFE@
+DISPLAY='Thunderstruck'
 VERSION=2015.1.0
 DISTRIBUTION=unstable
 
@@ -12,17 +12,21 @@ RELOGIN=yes
 AUTOSESSION=
 AUTOUSER=
 NUMLOCK=on
-THEMENAME=thunderstruck
+THEMENAME=@CODENAME_SAFE@
 CURSORTHEME=adwaita
 REMEMBERLASTSESSION=no
 REMEMBERLASTUSER=no
 
 # Main.qml
-BOXCOLOR=green
+BOXWIDTH=565
+BOXHEIGTH=165
 BOXTOPMARGIN=150
+BOXCOLOR="#303030"
+BOXOPACITY=0.8
+BOXRADIUS=12
 
 # metadata.desktop
-PREVIEW=images/preview.jpg
+PREVIEW="images/preview.jpg"
 
 #theme.conf
-BACKGROUND=images/background.jpg
+BACKGROUND="/usr/share/wallpapers/@CODENAME_SAFE@/contents/images/1920x1200.jpg"
