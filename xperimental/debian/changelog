@@ -1,3 +1,9 @@
+sddm-theme-thunderstruck (2015.11.30-1) unstable; urgency=medium
+
+  * Add dependency qml-module-qtquick-controls 
+
+ -- Alf Gaida <agaida@siduction.org>  Mon, 30 Nov 2015 00:21:03 +0100
+
 sddm-theme-thunderstruck (2015.11.29-1) unstable; urgency=medium
 
   * New sddm theme for thunderstruck

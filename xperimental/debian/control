@@ -13,7 +13,8 @@ Package: sddm-theme-thunderstruck
 Architecture: any
 Depends: ${misc:Depends},
          thunderstruck-wallpapers,
-         qml-module-qtgraphicaleffects
+         qml-module-qtgraphicaleffects,
+         qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
 Description: thunderstruck theme for sddm
