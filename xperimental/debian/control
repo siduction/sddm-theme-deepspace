@@ -12,10 +12,11 @@ Standards-Version: 3.9.6
 Package: sddm-theme-thunderstruck
 Architecture: any
 Depends: ${misc:Depends},
+         @DODENAME_SAFE@-wallpapers,
          qml-module-qtgraphicaleffects
 Recommends: sddm
 Provides: sddm-theme
 Description: thunderstruck theme for sddm
- Siduction thunderstruck sddm theme.
+ Siduction ":0" sddm theme.
  .
  This package contain a sddm theme.

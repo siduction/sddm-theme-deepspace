@@ -48,7 +48,7 @@ Rectangle {
         id: listViewItem
 
         Rectangle {
-            color: mouseArea.containsMouse ? "#FF4500": "transparent"   //"steelblue" : "transparent"
+            color: mouseArea.containsMouse ? "#FF4500": "transparent"   //"steelblue" : "transparent"         
             radius: 3
             width: parent.width; height: menu.itemHeight
 
@@ -75,17 +75,18 @@ Rectangle {
             Keys.onReturnPressed: { itemClicked(index); menu.state = "" }
         }
     }
-
+    
 
 
         ListView {
             id: menuList
-
-            anchors.fill: parent
+                
+            anchors.fill: parent                
             clip: true
             delegate: listViewItem
             highlight: Rectangle { color: "#FF4500"
             radius: 3 /*"lightsteelblue"*/ }
         }
-
+        
 }
+
