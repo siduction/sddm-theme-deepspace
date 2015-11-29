@@ -106,7 +106,7 @@ Rectangle {
             Rectangle {
                 width: parent.width
                 height: parent.height
-                color: #303030
+                color: "#303030"
                 opacity: 0.8
                 radius: 12
                 anchors.top: parent.top

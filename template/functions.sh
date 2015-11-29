@@ -48,7 +48,6 @@ function debian_changelog {
             -e "s/\@VERSION\@/${VERSION}/g" \
             -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
             -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-            -e "s/\@THEMENAME@/${THEMENAME}/g" \
             ../template/debian/changelog \
             > debian/changelog
     fi
@@ -63,12 +62,11 @@ function basic_control {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-        -e "s/\@THEMENAME@/${THEMENAME}/g" \
         ../template/debian/control \
         > debian/control
 }
- 
- 
+
+
 # debian rules
 # ============
 function debian_rules {
@@ -77,7 +75,6 @@ function debian_rules {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-        -e "s/\@THEMENAME@/${THEMENAME}/g" \
         ../template/debian/rules \
         > debian/rules
     chmod 755 debian/rules

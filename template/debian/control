@@ -12,7 +12,7 @@ Standards-Version: 3.9.6
 Package: sddm-theme-@CODENAME_SAFE@
 Architecture: any
 Depends: ${misc:Depends},
-         @DODENAME_SAFE@-wallpapers,
+         @CODENAME_SAFE@-wallpapers,
          qml-module-qtgraphicaleffects
 Recommends: sddm
 Provides: sddm-theme

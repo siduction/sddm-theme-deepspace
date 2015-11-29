@@ -32,37 +32,34 @@ import "./components"
 Rectangle {
     width: 640
     height: 480
-
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
-
-         TextConstants { id: textConstants }
-
-        Connections {
-            target: sddm
-
-            onLoginSucceeded: {
-                errorMessage.color = "white"
-                errorMessage.text = textConstants.loginSucceeded
-            }
-
-            onLoginFailed: {
-                errorMessage.color = "white"
-                errorMessage.text = textConstants.loginFailed
-                errorMessage.background = "black"
-                listView.currentItem.password.text = ""
-            }
+    TextConstants { id: textConstants }
+    Connections {
+        target: sddm
+        onLoginSucceeded: {
+            errorMessage.color = "white"
+            errorMessage.text = textConstants.loginSucceeded
         }
+        onLoginFailed: {
+            errorMessage.color = "white"
+            errorMessage.text = textConstants.loginFailed
+            errorMessage.background = "black"
+            listView.currentItem.password.text = ""
+        }
+    }
 
     Repeater {
         model: screenModel
         Background {
-            x: geometry.x; y: geometry.y; width: geometry.width; height:geometry.height
+            x: geometry.x
+            y: geometry.y
+            width: geometry.width
+            height:geometry.height
             source: config.background
             fillMode: Image.PreserveAspectCrop
-
-            KeyNavigation.backtab: pw_entry; KeyNavigation.tab: user_entry
-
+            KeyNavigation.backtab: pw_entry
+            KeyNavigation.tab: user_entry
             onStatusChanged: {
                 if (status == Image.Error && source != config.defaultBackground) {
                     source = config.defaultBackground
@@ -80,7 +77,7 @@ Rectangle {
     Rectangle {
         width: parent.width
         height: 34
-        color: "#333335" //"#053343"
+        color: "#333335"
         opacity: 0.8
         radius: 3
         anchors.top: parent.top
@@ -94,7 +91,6 @@ Rectangle {
         width: geometry.width
         height: geometry.height
         color: "transparent"
-
         Rectangle {
             width: @BOXWIDTH@
             height: @BOXHEIGTH@
@@ -106,7 +102,7 @@ Rectangle {
             Rectangle {
                 width: parent.width
                 height: parent.height
-                color: @BOXCOLOR@
+                color: "@BOXCOLOR@"
                 opacity: @BOXOPACITY@
                 radius: @BOXRADIUS@
                 anchors.top: parent.top
@@ -115,14 +111,10 @@ Rectangle {
 
             /* Messages and warnings */
             Column {
-
                 anchors.centerIn: parent
-
                 /* Capslock warning */
                 Rectangle {
-
                     anchors.centerIn: parent
-
                     CapsLock {
                         id: txtCaps
                         anchors.horizontalCenter: parent.horizontalCenter
@@ -130,27 +122,24 @@ Rectangle {
                         anchors.topMargin: -65
                         color:"white"
                         font.pixelSize: 14
-                        }
                     }
+                }
 
                 /* Login faild message */
-
                 Rectangle {
                     anchors.centerIn: parent
                     anchors.fill: parent
                     anchors.top: parent.top
                     anchors.topMargin: -80
-
                     Text {
                         id: errorMessage
                         anchors.horizontalCenter: parent.horizontalCenter
                         color:"white"
                         font.pixelSize: 17
                         //text: textConstants.prompt
-                        }
                     }
                 }
-            /* End Messages and warnings */
+            }
 
             Item {
                 anchors.margins: 20
@@ -181,7 +170,6 @@ Rectangle {
                                 id:userName
                                 color:"white"
                                 text:textConstants.userName
-                                //font.bold: true
                                 font.pixelSize: 12
                             }
                         }
@@ -194,7 +182,6 @@ Rectangle {
                                 id: userPassword
                                 color: "white"
                                 text: textConstants.password
-                                //font.bold: true
                                 font.pixelSize: 12
                             }
                         }
@@ -299,7 +286,6 @@ Rectangle {
                     anchors.topMargin: 66
 
                     /* tooltips buttonRow */
-
                     ToolTip {
                         id: tooltip2
                         target: login_button
@@ -310,7 +296,6 @@ Rectangle {
                         id: tooltip3
                         target: session_button
                         text: textConstants.session
-                        //font.bold: true
                     }
 
                     ToolTip {
@@ -356,7 +341,7 @@ Rectangle {
                                 ImageButton {
                                     id: session_button
                                     height: 32
-                                    source: "images/siductionlogin-white.png" //"images/session_normal.png"
+                                    source: "images/siductionlogin-white.png"
                                     onClicked: if (menu_session.state === "visible") menu_session.state = ""; else
                                                    menu_session.state = "visible"
                                     KeyNavigation.backtab: pw_entry;
@@ -444,7 +429,6 @@ Rectangle {
                 * Feel free to change it
                 *******************************************************************/
                 text:sddm.hostName //textConstants.welcomeText.arg(sddm.hostName)
-                // font.bold: true
                 font.pixelSize: 12
             }
         }
@@ -460,13 +444,12 @@ Rectangle {
                 anchors.rightMargin:20
                 horizontalAlignment: Text.AlignRight
                 color:"white"
-                //font.bold: true
                 font.pixelSize: 12
 
                 /*************************************
                 * feel free to change the time format
                 *************************************/
-                text: Qt.formatDateTime(new Date(), "dddd, dd MMMM yyyy HH:mm AP")
+                text: Qt.formatDateTime(new Date(), "dddd, dd MMMM yyyy HH:mm")
             }
         }
 
