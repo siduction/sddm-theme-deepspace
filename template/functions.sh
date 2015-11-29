@@ -47,7 +47,7 @@ function debian_changelog {
             -e "s/\@DISTRIBUTION\@/${DISTRIBUTION}/g" \
             -e "s/\@VERSION\@/${VERSION}/g" \
             -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
-            -e "s/\@DISPLAY\@/${DISPLAY}/g" \
+            -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
             -e "s/\@THEMENAME@/${THEMENAME}/g" \
             ../template/debian/changelog \
             > debian/changelog
@@ -62,7 +62,7 @@ function basic_control {
         -e "s/\@DISTRIBUTION\@/${DISTRIBUTION}/g" \
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
+        -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
         -e "s/\@THEMENAME@/${THEMENAME}/g" \
         ../template/debian/control \
         > debian/control
@@ -76,7 +76,7 @@ function debian_rules {
         -e "s/\@DISTRIBUTION\@/${DISTRIBUTION}/g" \
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
-        -e "s/\@DISPLAY\@/${DISPLAY}/g" \
+        -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
         -e "s/\@THEMENAME@/${THEMENAME}/g" \
         ../template/debian/rules \
         > debian/rules

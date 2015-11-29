@@ -96,19 +96,19 @@ Rectangle {
         color: "transparent"
 
         Rectangle {
-            width: 565 // 565
-            height: 165 // 165
+            width: 565
+            height: 165
             color: "#00000000"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
-            anchors.topMargin: 150 // 150
+            anchors.topMargin: 150
 
             Rectangle {
                 width: parent.width
                 height: parent.height
-                color: #303030 // "#303030"
-                opacity: 0.8 // 0.8
-                radius: 12 //12
+                color: #303030
+                opacity: 0.8
+                radius: 12
                 anchors.top: parent.top
                 anchors.left: parent.left
             }

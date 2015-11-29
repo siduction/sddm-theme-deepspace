@@ -2,7 +2,7 @@
 
 WALLPAPER=thunderstruck
 CODENAME_SAFE=thunderstruck
-DISPLAY='Thunderstruck'
+DISPLAY_NAME='Thunderstruck'
 VERSION=2015.1.0
 DISTRIBUTION=unstable
 

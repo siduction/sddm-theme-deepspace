@@ -17,6 +17,6 @@ Depends: ${misc:Depends},
 Recommends: sddm
 Provides: sddm-theme
 Description: thunderstruck theme for sddm
- Siduction ":0" sddm theme.
+ Siduction "Thunderstruck" sddm theme.
  .
  This package contain a sddm theme.
