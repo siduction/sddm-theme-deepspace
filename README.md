@@ -32,3 +32,7 @@ Be shure that the directory 'new theme' is set to drwxr-xr-x
 If not, run chmod 755 'new theme'!
 
 Otherwise you have no luck to use it!
+
+### Needed stuff ###
+
+Be shure you have qml-module-qtquick-controls and qml-module-qtgraphicaleffects installed!
