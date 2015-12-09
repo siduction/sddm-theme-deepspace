@@ -13,7 +13,8 @@ Package: sddm-theme-@CODENAME_SAFE@
 Architecture: any
 Depends: ${misc:Depends},
          @CODENAME_SAFE@-wallpapers,
-         qml-module-qtgraphicaleffects
+         qml-module-qtgraphicaleffects,
+         qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
 Description: @CODENAME_SAFE@ theme for sddm
