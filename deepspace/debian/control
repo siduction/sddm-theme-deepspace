@@ -12,7 +12,8 @@ Standards-Version: 3.9.6
 Package: sddm-theme-deepspace
 Architecture: any
 Depends: ${misc:Depends},
-         qml-module-qtgraphicaleffects
+         qml-module-qtgraphicaleffects,
+         qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
 Description: Deepspace theme for sddm

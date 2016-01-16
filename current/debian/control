@@ -12,10 +12,12 @@ Standards-Version: 3.9.6
 Package: sddm-theme-whiteroom
 Architecture: any
 Depends: ${misc:Depends},
-         qml-module-qtgraphicaleffects
+         whiteroom-wallpapers,
+         qml-module-qtgraphicaleffects,
+         qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
-Description: Whiteroom theme for sddm
- Siduction whiteroom sddm theme.
+Description: whiteroom theme for sddm
+ Siduction "WhiteRoom" sddm theme.
  .
- This package contain a Siduction sddm theme.
+ This package contain a sddm theme.

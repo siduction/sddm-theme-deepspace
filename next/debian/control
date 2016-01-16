@@ -13,7 +13,8 @@ Package: sddm-theme-paintitblack
 Architecture: any
 Depends: ${misc:Depends},
          paintitblack-wallpapers,
-         qml-module-qtgraphicaleffects
+         qml-module-qtgraphicaleffects,
+         qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
 Description: paintitblack theme for sddm
