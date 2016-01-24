@@ -1,3 +1,13 @@
+sddm-theme-deepspace (2016.01.16-2) unstable; urgency=medium
+
+  * fixed depedencies
+  * port changes form the next and xperimental theme back to deepspace
+  * fix the copyright to expat - we are not allowed to relicense existing
+    code without asking the original authors 
+  * removed postinst
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 16 Jan 2016 12:40:57 +0100
+
 sddm-theme-deepspace (2015.11.24-1) unstable; urgency=medium
 
   * Added some postinst and prerm scripts
