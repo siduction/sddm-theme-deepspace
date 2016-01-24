@@ -1,3 +1,9 @@
+sddm-theme-thunderstruck (2016.01.24) unstable; urgency=medium
+
+  * new bootstrap for 2016
+
+ -- Alf Gaida <agaida@siduction.org>  Sun, 24 Jan 2016 23:48:01 +0100
+
 sddm-theme-thunderstruck (2015.11.30-1) unstable; urgency=medium
 
   * Add dependency qml-module-qtquick-controls 
