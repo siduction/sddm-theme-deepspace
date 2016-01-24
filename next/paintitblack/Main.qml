@@ -1,6 +1,6 @@
 /***************************************************************************
-* Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
-*            2015 Alf Gaida <agaida@siduction.org>
+* Copyright: 2015-2016 Hendrik Lehmbruch <hendrikL@siduction.org>
+*            2015-2016 Alf Gaida <agaida@siduction.org>
 *            2013 Reza Fatahilah Shah <rshah0385@kireihana.com>
 *            2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
 *
