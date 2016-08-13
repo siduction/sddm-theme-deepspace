@@ -1,23 +1,5 @@
-sddm-theme-paintitblack (2015.12.09-1) unstable; urgency=medium
-
-  * new bootstrap 
-
- -- Alf Gaida <agaida@siduction.org>  Wed, 09 Dec 2015 01:06:58 +0100
-
-sddm-theme-paintitblack (2015.11.29-1) unstable; urgency=medium
-
-  * new bootstrap with modified theme and defaults
-
- -- Alf Gaida <agaida@siduction.org>  Sun, 29 Nov 2015 12:54:23 +0100
-
-sddm-theme-paintitblack (2015.11.24-1) unstable; urgency=medium
-
-  * Added some postinst and prerm scripts
-
- -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 14:16:25 +0200
-
-sddm-theme-paintitblack (2015.10.18-1) unstable; urgency=medium
+sddm-theme-patience (2016.1.0~alpha-1) unstable; urgency=medium
 
   * Initial release
 
- -- Alf Gaida <agaida@siduction.org>  Sun, 18 Oct 2015 00:30:54 +0200
+ -- Alf Gaida <agaida@siduction.org>  Sat, 13 Aug 2016 10:24:24 +0200

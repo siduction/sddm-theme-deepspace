@@ -1,14 +1,14 @@
 #!/bin/bash
 
-WALLPAPER=paintitblack
-CODENAME_SAFE=paintitblack
-DISPLAY_NAME='PaintItBlack'
+WALLPAPER=patience
+CODENAME_SAFE=patience
+DISPLAY_NAME=Patience
 VERSION=2015.1.0
 DISTRIBUTION=unstable
 
 
 # sddm.conf
-RELOGIN=yes
+RELOGIN=no
 AUTOSESSION=
 AUTOUSER=
 NUMLOCK=on
@@ -28,4 +28,4 @@ BOXRADIUS=12
 PREVIEW="images/preview.jpg"
 
 #theme.conf
-BACKGROUND="/usr/share/wallpapers/paintitblack/contents/images/1920x1200.jpg"
+BACKGROUND="/usr/share/wallpapers/patience/contents/images/1920x1200.jpg"
