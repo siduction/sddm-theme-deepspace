@@ -1,3 +1,9 @@
+sddm-theme-patience (2016.1.0~alpha-2) unstable; urgency=medium
+
+  * bootstrapped the latest template changes, thanks hendrikL 
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 30 Aug 2016 20:58:25 +0200
+
 sddm-theme-patience (2016.1.0~alpha-1) unstable; urgency=medium
 
   * Initial release
