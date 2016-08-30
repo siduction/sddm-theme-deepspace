@@ -437,19 +437,12 @@ Rectangle {
             id: infoDate
             anchors.right: parent.right; anchors.top: parent.top
             anchors.topMargin:10
-
-            Text {
-                id: time_label
-                anchors.right: parent.right
-                anchors.rightMargin:20
-                horizontalAlignment: Text.AlignRight
-                color:"white"
-                font.pixelSize: 12
-
-                /*************************************
-                * feel free to change the time format
-                *************************************/
-                text: Qt.formatDateTime(new Date(), "dddd, dd MMMM yyyy HH:mm")
+            
+            TimeDate { 
+                    id: clock
+                    anchors.right: parent.right
+                    anchors.rightMargin:20
+                    color: "white"
             }
         }
 
