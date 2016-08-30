@@ -5,8 +5,8 @@ Section: x11
 Priority: optional
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.8
-#Vcs-Browser: http://git.siduction.org/extra
-#Vcs-Git: https://git.siduction.org/extra
+#Vcs-Browser: http://git.siduction.org/extra/sddm-theme-siduction
+#Vcs-Git: https://git.siduction.org/extra/sddm-theme-siduction
 #Homepage: https://git.siduction.org/extra/
 
 Package: sddm-theme-patience

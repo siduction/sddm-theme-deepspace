@@ -38,14 +38,14 @@ Rectangle {
     Connections {
         target: sddm
         onLoginSucceeded: {
-            errorMessage.color = "white"
-            errorMessage.text = textConstants.loginSucceeded
         }
-        onLoginFailed: {
+        onLoginFailed: {            
+            pw_entry.text = ""
+            user_entry.text = ""
+            user_entry.focus = true
             errorMessage.color = "white"
             errorMessage.text = textConstants.loginFailed
             errorMessage.background = "black"
-            listView.currentItem.password.text = ""
         }
     }
 
