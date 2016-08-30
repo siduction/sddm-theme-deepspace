@@ -43,7 +43,7 @@ Column {
         /**************************************
         * feel free to change the time format *
         **************************************/
-        text: Qt.formatDateTime(container.dateTime, "dddd, dd MMMM yyyy HH:mm AP")
+        text: Qt.formatDateTime(container.dateTime, "dddd, dd MMMM yyyy HH:mm:ss") /*"dddd, dd MMMM yyyy HH:mm AP"*/
 
         font.pointSize: 10
     }
