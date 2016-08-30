@@ -41,6 +41,8 @@ Rectangle {
         }
         onLoginFailed: {            
             pw_entry.text = ""
+            user_entry.text = ""
+            user_entry.focus = true
             errorMessage.color = "white"
             errorMessage.text = textConstants.loginFailed
             errorMessage.background = "black"
