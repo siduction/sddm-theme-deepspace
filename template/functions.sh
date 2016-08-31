@@ -48,7 +48,7 @@ function debian_changelog {
             -e "s/\@VERSION\@/${VERSION}/g" \
             -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
             -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-            ../template/debian/changelog \
+            template/debian/changelog \
             > debian/changelog
     fi
 }
@@ -62,7 +62,7 @@ function basic_control {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-        ../template/debian/control \
+        template/debian/control \
         > debian/control
 }
 
@@ -75,13 +75,13 @@ function debian_rules {
         -e "s/\@VERSION\@/${VERSION}/g" \
         -e "s/\@FLAVOUR\@/${FLAVOUR}/g" \
         -e "s/\@DISPLAY_NAME\@/${DISPLAY_NAME}/g" \
-        ../template/debian/rules \
+        template/debian/rules \
         > debian/rules
     chmod 755 debian/rules
 }
  
 # debian foo basics
 function debian_foo_basics {
-    cp -a ../template/debian/source debian
-    cp    ../template/debian/compat debian
+    cp -a template/debian/source debian
+    cp    template/debian/compat debian
 }
