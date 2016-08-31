@@ -35,11 +35,13 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
     TextConstants { id: textConstants }
+    
     Connections {
         target: sddm
         onLoginSucceeded: {
         }
-        onLoginFailed: {            
+        onLoginFailed: { 
+            /* on failed login, clean user and password entry */
             pw_entry.text = ""
             user_entry.text = ""
             user_entry.focus = true
@@ -145,12 +147,6 @@ Rectangle {
                 anchors.margins: 20
                 anchors.fill: parent
 
-                /* workaround to focus the user_entry, see below the TextBox user_entry */
-                property alias user: user_entry.text
-
-                /* workaround to focus pw_entry if needed */
-                property alias password: pw_entry.text
-
                 Column {
                     anchors.left: parent.left
                     anchors.leftMargin: 5
@@ -201,20 +197,6 @@ Rectangle {
                             KeyNavigation.backtab: login_button
                             KeyNavigation.tab: pw_entry
 
-                            /*** hack found in plasma breeze sddm as workaround to focus input field ***/
-                            /*****************************************************************************
-                            * focus works in qmlscene
-                            * but this seems to be needed when loaded from SDDM
-                            * I don't understand why, but we have seen this before in the old lock screen
-                            ******************************************************************************/
-                            Timer {
-                                interval: 200
-                                running: true
-                                repeat: false
-                                onTriggered: user_entry.forceActiveFocus()
-                            }
-                            /* end hack */
-
                             /***********************************************************************
                             * If you want the last successfully logged in user to be displayed,
                             * uncomment the "text: userModel.lastUser" row below
@@ -236,22 +218,6 @@ Rectangle {
                             KeyNavigation.backtab: user_entry
                             KeyNavigation.tab: session_button
 
-                            /***************************************************************
-                            * if you uncomment the "text: userModel.lastUser" row above,
-                            * uncomment the Timer section below too,
-                            * But also comment the Timer section above, so that the
-                            * password box is focused and not the user box.
-                            * **************************************************************/
-
-                            /* start hack */
-                            // Timer {
-                            //     interval: 200
-                            //     running: true
-                            //     repeat: false
-                            //     onTriggered: pw_entry.forceActiveFocus()
-                            // }
-                            /* end hack */
-
                             Keys.onPressed: {
                                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                                     sddm.login(user_entry.text, pw_entry.text, menu_session.index)
@@ -259,21 +225,6 @@ Rectangle {
                                 }
                             }
                         }
-
-                        /* tooltips for the input fields */
-                        /* no translation or text avialable */
-                        // ToolTip {
-                        //     id: tooltip0
-                        //     target: user_entry
-                        //     text: textConstants.promptUser
-                        // }
-
-                        /* no translation or text avialable */
-                        // ToolTip {
-                        //    id: tooltip1
-                        //    target: pw_entry
-                        //    text: textConstants.promptPassword
-                        // }
                     }
                 }
 
@@ -438,6 +389,7 @@ Rectangle {
             anchors.right: parent.right; anchors.top: parent.top
             anchors.topMargin:10
             
+            /* To change the time format, see components/TimeDate.qml */
             TimeDate { 
                     id: clock
                     anchors.right: parent.right
