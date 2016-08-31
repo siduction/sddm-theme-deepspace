@@ -1,8 +1,9 @@
-sddm-theme-paintitblack (2016.08.31-1) UNRELEASED; urgency=medium
+sddm-theme-paintitblack (2016.08.31-1) unstable; urgency=medium
 
   * new bootstrap, template-handling improved
+  * install preview.jpg again
 
- -- Alf Gaida <agaida@siduction.org>  Wed, 31 Aug 2016 19:08:54 +0200
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 01:13:03 +0200
 
 sddm-theme-paintitblack (2015.12.09-1) unstable; urgency=medium
 
