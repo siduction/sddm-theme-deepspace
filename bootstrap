@@ -1,0 +1,72 @@
+#!/bin/bash
+set -e
+
+
+source  template/functions.sh
+
+source_version_info
+debian_changelog
+cleanup_old_builds
+debian_cleanup
+debian_foo_basics
+basic_control
+debian_rules
+
+# debian/install
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    template/debian/install \
+    > debian/install
+
+# debian/install
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    template/debian/get-new-template \
+    > debian/get-new-template
+
+# debian/postinst
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    template/debian/postinst \
+    > debian/postinst
+
+# debian/copyright
+sed -e "s%\@CODENAME_SAFE\@%${CODENAME_SAFE}%g" \
+    template/debian/copyright \
+    > debian/copyright
+
+#etc
+rm -r etc/*
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    -e "s/\@RELOGIN\@/${RELOGIN}/g" \
+    -e "s/\@AUTOSESSION\@/${AUTOSESSION}/g" \
+    -e "s/\@AUTOUSER\@/${AUTOUSER}/g" \
+    -e "s/\@NUMLOCK\@/${NUMLOCK}/g" \
+    -e "s/\@CURSORTHEME\@/${CURSORTHEME}/g" \
+    -e "s/\@REMEMBERLASTSESSION\@/${REMEMBERLASTSESSION}/g" \
+    -e "s/\@REMEMBERLASTUSER\@/${REMEMBERLASTUSER}/g" \
+    template/etc/sddm.conf \
+    > etc/sddm-${CODENAME_SAFE}.conf
+
+#theme
+rm -rf theme
+mkdir -p theme
+cp -a template/theme/* theme
+
+sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
+    -e "s/\@BOXCOLOR\@/${BOXCOLOR}/g" \
+    -e "s/\@BOXTOPMARGIN\@/${BOXTOPMARGIN}/g" \
+    -e "s/\@BOXWIDTH\@/${BOXWIDTH}/g" \
+    -e "s/\@BOXHEIGTH\@/${BOXHEIGTH}/g" \
+    -e "s/\@BOXOPACITY\@/${BOXOPACITY}/g" \
+    -e "s/\@BOXRADIUS\@/${BOXRADIUS}/g" \
+    template/theme/Main.qml \
+    > theme/Main.qml
+
+sed -e "s#\@CODENAME_SAFE\@#${CODENAME_SAFE}#g" \
+    -e "s#\@PREVIEW\@#${PREVIEW}#g" \
+    template/theme/metadata.desktop \
+    > theme/metadata.desktop
+
+sed -e "s#\@BACKGROUND\@#${BACKGROUND}#g" \
+    template/theme/theme.conf \
+    > theme/theme.conf
+
+exit 0
