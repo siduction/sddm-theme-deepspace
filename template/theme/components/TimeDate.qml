@@ -1,5 +1,5 @@
 /*************************************************************************** 
-* Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
+* Copyright: 2016 Hendrik Lehmbruch <hendrikL@siduction.org>
 *            2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
 * 
 * Permission is hereby granted, free of charge, to any person
