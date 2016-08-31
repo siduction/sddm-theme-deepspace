@@ -2,7 +2,7 @@
 set -e
 
 
-. ../template/functions.sh
+source  template/functions.sh
 
 source_version_info
 debian_changelog
