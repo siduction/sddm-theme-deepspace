@@ -1,3 +1,11 @@
+sddm-theme-patience (2016.1.0~alpha-5) unstable; urgency=medium
+
+  * install preview.jpg again
+  * bumped copyright years
+  * fixed copyright files
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 01:22:53 +0200
+
 sddm-theme-patience (2016.1.0~alpha-4) unstable; urgency=medium
 
   * cherry-picked latest changes from templates branch 
