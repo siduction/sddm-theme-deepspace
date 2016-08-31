@@ -1,2 +1,3 @@
 theme/* usr/share/sddm/themes/@CODENAME_SAFE@/
+preview.jpg /usr/share/sddm/themes/@CODENAME_SAFE@/images/
 etc
