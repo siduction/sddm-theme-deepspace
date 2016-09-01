@@ -1,3 +1,9 @@
+sddm-theme-patience (2016.1.0~alpha-6) unstable; urgency=medium
+
+  * package is all instead of any
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 02:51:40 +0200
+
 sddm-theme-patience (2016.1.0~alpha-5) unstable; urgency=medium
 
   * install preview.jpg again
