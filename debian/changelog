@@ -1,3 +1,9 @@
+sddm-theme-patience (2016.1.0~alpha-7) unstable; urgency=medium
+
+  * new bootstrap fix the kcm issue 
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 18:28:06 +0200
+
 sddm-theme-patience (2016.1.0~alpha-6) unstable; urgency=medium
 
   * package is all instead of any

@@ -11,5 +11,5 @@ git checkout template -- bootstrap
 rm -rf template
 rm -f bootstrap
 
-# git add .
+git add .
 
