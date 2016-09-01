@@ -1,3 +1,9 @@
+sddm-theme-paintitblack (2016.09.01-1) unstable; urgency=medium
+
+  * new bootstrap fix the kcm issue
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 18:22:31 +0200
+
 sddm-theme-paintitblack (2016.08.31-2) unstable; urgency=medium
 
   * package is all instead of any

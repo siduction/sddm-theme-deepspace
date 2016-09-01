@@ -1,6 +1,6 @@
 [SddmGreeterTheme]
 Name=paintitblack
-Description=@DISPLAY_NAME@ sddm theme, based on elarun SddmGreeterTheme.
+Description=PaintItBlack sddm theme, based on elarun SddmGreeterTheme.
 Type=sddm-theme
 Author=Hendrik Lehmbruch
 Copyright=2015, Hendrik Lehmbruch
