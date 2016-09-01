@@ -10,7 +10,7 @@ Standards-Version: 3.9.8
 #Homepage: https://git.siduction.org/extra/
 
 Package: sddm-theme-paintitblack
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends},
          paintitblack-wallpapers,
          qml-module-qtgraphicaleffects,

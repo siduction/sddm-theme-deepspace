@@ -1,3 +1,9 @@
+sddm-theme-paintitblack (2016.08.31-2) unstable; urgency=medium
+
+  * package is all instead of any
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 01 Sep 2016 02:49:34 +0200
+
 sddm-theme-paintitblack (2016.08.31-1) unstable; urgency=medium
 
   * new bootstrap, template-handling improved
