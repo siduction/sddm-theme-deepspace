@@ -35,27 +35,24 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
     TextConstants { id: textConstants }
+
+    /* Resets the "Login Failed" message after 3 seconds */
+    Timer {
+        id: errorMessageResetTimer
+        interval: 3000
+        onTriggered: errorMessage.text = ""
+    }
     
-    Item {
-        
-        /* Resets the "Login Failed" message after 3 seconds */
-        Timer {
-            id: errorMessageResetTimer
-            interval: 3000
-            onTriggered: errorMessage.text = ""
-        }
-        
-        Connections {
-            target: sddm
-            onLoginFailed: {
-                /* on fail login, clean user and password entry */
-                pw_entry.text = ""
-                user_entry.text = ""
-                user_entry.focus = true
-                /* Reset the message*/
-                errorMessageResetTimer.restart()
-                errorMessage.text = textConstants.loginFailed
-            }
+    Connections {
+        target: sddm
+        onLoginFailed: {
+            /* on fail login, clean user and password entry */
+            pw_entry.text = ""
+            user_entry.text = ""
+            user_entry.focus = true
+            /* Reset the message*/
+            errorMessageResetTimer.restart()
+            errorMessage.text = textConstants.loginFailed
         }
     }
     
