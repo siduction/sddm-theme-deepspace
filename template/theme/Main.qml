@@ -120,31 +120,23 @@ Rectangle {
             Column {
                 anchors.centerIn: parent
                 /* Capslock warning */
-                Rectangle {
-                    anchors.centerIn: parent
-                    CapsLock {
-                        id: txtCaps
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.top: parent.top
-                        anchors.topMargin: -65
-                        color:"white"
-                        font.pixelSize: 14
-                    }
+                CapsLock {
+                    id: txtCaps
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.top: parent.top
+                    anchors.topMargin: -60
+                    color:"white"
+                    font.pixelSize: 14
                 }
                 
                 /* Login faild message */
-                Rectangle {
-                    anchors.centerIn: parent
-                    anchors.fill: parent
+                Text {
+                    id: errorMessage
+                    anchors.horizontalCenter: parent.horizontalCenter
                     anchors.top: parent.top
-                    anchors.topMargin: -80
-                    
-                    Text {
-                        id: errorMessage
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color:"white"
-                        font.pixelSize: 17
-                    }
+                    anchors.topMargin: -74
+                    color:"white"
+                    font.pixelSize: 17
                 }
             }
             
@@ -401,8 +393,8 @@ Rectangle {
         Component.onCompleted: {
             if (user_entry.text === "")
                 user_entry.focus = true
-                else
-                    pw_entry.focus = true
+            else
+                pw_entry.focus = true
         }
     }
 }
