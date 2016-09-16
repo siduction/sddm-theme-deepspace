@@ -43,8 +43,8 @@ Rectangle {
             id: errorMessageResetTimer
             interval: 3000
             onTriggered: errorMessage.text = ""
-            }
-            
+        }
+        
         Connections {
             target: sddm
             onLoginFailed: {
@@ -58,7 +58,7 @@ Rectangle {
             }
         }
     }
-
+    
     Repeater {
         model: screenModel
         Background {
@@ -77,12 +77,12 @@ Rectangle {
             }
         }
     }
-
-
+    
+    
     /* *****************************************************
-    * workaround for light backgrounds,
-    * deeepspace is especially made for dark backgrounds
-    * ****************************************************/
+     * workaround for light backgrounds,
+     * deeepspace is especially made for dark backgrounds
+     * ****************************************************/
     /* start blue box */
     Rectangle {
         width: parent.width
@@ -93,7 +93,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }
-
+    
     Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x
@@ -108,7 +108,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
             anchors.topMargin: @BOXTOPMARGIN@
-
+            
             Rectangle {
                 width: parent.width
                 height: parent.height
@@ -118,7 +118,7 @@ Rectangle {
                 anchors.top: parent.top
                 anchors.left: parent.left
             }
-
+            
             /* Messages and warnings */
             Column {
                 anchors.centerIn: parent
@@ -134,7 +134,7 @@ Rectangle {
                         font.pixelSize: 14
                     }
                 }
-
+                
                 /* Login faild message */
                 Rectangle {
                     anchors.centerIn: parent
@@ -150,22 +150,22 @@ Rectangle {
                     }
                 }
             }
-
+            
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
-
+                
                 Column {
                     anchors.left: parent.left
                     anchors.leftMargin: 5
                     anchors.top: parent.top
                     anchors.topMargin: 25
                     height: 51
-
+                    
                     Row {
                         id:labelRow
                         spacing: 12
-
+                        
                         Rectangle {
                             anchors.bottom: parent.bottom
                             width: 250; height: 21
@@ -177,7 +177,7 @@ Rectangle {
                                 font.pixelSize: 12
                             }
                         }
-
+                        
                         Rectangle {
                             anchors.bottom: parent.bottom
                             width: 250; height: 21
@@ -190,7 +190,7 @@ Rectangle {
                             }
                         }
                     }
-
+                    
                     Row {
                         id: userRow
                         anchors.right: parent.right
@@ -204,20 +204,20 @@ Rectangle {
                             radius: 3
                             KeyNavigation.backtab: login_button
                             KeyNavigation.tab: pw_entry
-
+                            
                             /***********************************************************************
-                            * If you want the last successfully logged in user to be displayed,
-                            * uncomment the "text: userModel.lastUser" row below
-                            * for more informations why it isn't possible to configure it via
-                            * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
-                            * so i wait, till this is fixed in debian sid.
-                            * Dont forget to enable it in the /etc/sddm.conf
-                            * "RememberLastUser=true",
-                            * also take a look to the pw_entry section below!
-                            ************************************************************************/
+                             * If you want the last successfully logged in user to be displayed,
+                             * uncomment the "text: userModel.lastUser" row below
+                             * for more informations why it isn't possible to configure it via
+                             * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
+                             * so i wait, till this is fixed in debian sid.
+                             * Dont forget to enable it in the /etc/sddm.conf
+                             * "RememberLastUser=true",
+                             * also take a look to the pw_entry section below!
+                             ************************************************************************/
                             //text: userModel.lastUser
                         }
-
+                        
                         PwBox {
                             id: pw_entry
                             width: 250; height: 30
@@ -225,7 +225,7 @@ Rectangle {
                             radius: 3
                             KeyNavigation.backtab: user_entry
                             KeyNavigation.tab: session_button
-
+                            
                             Keys.onPressed: {
                                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                                     sddm.login(user_entry.text, pw_entry.text, menu_session.index)
@@ -235,7 +235,7 @@ Rectangle {
                         }
                     }
                 }
-
+                
                 Item {
                     width: 512; height: 36
                     anchors.top: parent.top
@@ -243,46 +243,46 @@ Rectangle {
                     anchors.right: parent.right
                     anchors.leftMargin: 5
                     anchors.topMargin: 66
-
+                    
                     /* tooltips buttonRow */
                     ToolTip {
                         id: tooltip2
                         target: login_button
                         text: textConstants.login
                     }
-
+                    
                     ToolTip {
                         id: tooltip3
                         target: session_button
                         text: textConstants.session
                     }
-
+                    
                     ToolTip {
                         id: tooltip4
                         target: system_button
                         text: textConstants.shutdown
                     }
-
+                    
                     ToolTip {
                         id: tooltip5
                         target: reboot_button
                         text: textConstants.reboot
                     }
-
+                    
                     /* there is no translation in sddm for it */
                     ToolTip {
                         id: tooltip6
                         target: suspend_button
                         text: "Suspend" // textConstants.suspend
                     }
-
+                    
                     /* there is no translation in sddm for it */
                     ToolTip {
                         id: tooltip7
                         target: hibernate_button
                         text: "Hibernate" //textConstants.hibernate
                     }
-
+                    
                     Row {
                         spacing: 15
                         Rectangle {
@@ -296,17 +296,17 @@ Rectangle {
                                 height: 36
                                 anchors.topMargin:10
                                 spacing: 8
-
+                                
                                 ImageButton {
                                     id: session_button
                                     height: 32
                                     source: "images/siductionlogin-white.png"
                                     onClicked: if (menu_session.state === "visible") menu_session.state = ""; else
-                                                   menu_session.state = "visible"
+                                    menu_session.state = "visible"
                                     KeyNavigation.backtab: pw_entry;
                                     KeyNavigation.tab: system_button
                                 }
-
+                                
                                 ImageButton {
                                     id: system_button
                                     height: 32
@@ -315,7 +315,7 @@ Rectangle {
                                     KeyNavigation.backtab: session_button;
                                     KeyNavigation.tab: reboot_button
                                 }
-
+                                
                                 ImageButton {
                                     id: reboot_button
                                     height: 32
@@ -324,7 +324,7 @@ Rectangle {
                                     KeyNavigation.backtab: system_button;
                                     KeyNavigation.tab: suspend_button
                                 }
-
+                                
                                 ImageButton {
                                     id: suspend_button
                                     height: 32
@@ -334,7 +334,7 @@ Rectangle {
                                     KeyNavigation.backtab: reboot_button
                                     KeyNavigation.tab: hibernate_button
                                 }
-
+                                
                                 ImageButton {
                                     id: hibernate_button
                                     height: 32
@@ -344,7 +344,7 @@ Rectangle {
                                     KeyNavigation.backtab: suspend_button
                                     KeyNavigation.tab: login_button
                                 }
-
+                                
                                 ImageButton {
                                     id: login_button
                                     height: 32
@@ -354,7 +354,7 @@ Rectangle {
                                     KeyNavigation.tab: user_entry
                                 }
                             }
-
+                            
                             SessionMenu {
                                 id: menu_session
                                 width: 200; height: 0
@@ -368,49 +368,44 @@ Rectangle {
                 }
             }
         }
-
-        Rectangle {
-            id: infoHost
-            anchors.left: parent.left; anchors.top: parent.top
+        
+        Text {
+            id:hostName
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.leftMargin:20
             anchors.topMargin:10
-
-            Text {
-                id:hostName
-                anchors.left: parent.left
-                anchors.leftMargin:20
-                anchors.topMargin:15
-                color:"white"
-
-                /*******************************************************************
-                * Now, only the hostName is displayed.
-                * "Welcome to" is not displayed
-                * i decided that it looks nicer like it is, without the "welcome to"
-                * Feel free to change it
-                *******************************************************************/
-                text:sddm.hostName //textConstants.welcomeText.arg(sddm.hostName)
-                font.pixelSize: 12
-            }
-        }
-
-        Rectangle {
-            id: infoDate
-            anchors.right: parent.right; anchors.top: parent.top
-            anchors.topMargin:10
+            color:"white"
             
-            /* to change the displayed date and time, see components/TimeDate.qml */
-            TimeDate { 
-                    id: clock
-                    anchors.right: parent.right
-                    anchors.rightMargin:20
-                    color: "white"
+            text:/*textConstants.welcomeText.arg */(sddm.hostName)
+            font.pixelSize: 12
+        }
+        
+        Timer {
+            id: time
+            interval: 100
+            running: true
+            repeat: true
+            
+            onTriggered: {
+                dateTime.text = Qt.formatDateTime(new Date(), Locale.LongFormat)
             }
         }
-
+        
+        Text { 
+            id:dateTime
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin:20
+            anchors.topMargin:10
+            color: "white"
+        }
+        
         Component.onCompleted: {
             if (user_entry.text === "")
                 user_entry.focus = true
-            else
-                pw_entry.focus = true
+                else
+                    pw_entry.focus = true
         }
     }
 }
