@@ -36,10 +36,10 @@ Rectangle {
     LayoutMirroring.childrenInherit: true
     TextConstants { id: textConstants }
 
-    /* Resets the "Login Failed" message after 3 seconds */
+    /* Resets the "Login Failed" message after 2,5 seconds */
     Timer {
         id: errorMessageResetTimer
-        interval: 3000
+        interval: 2500
         onTriggered: errorMessage.text = ""
     }
     
@@ -81,6 +81,8 @@ Rectangle {
      * deeepspace is especially made for dark backgrounds
      * ****************************************************/
     /* start blue box */
+    
+    /* Top bar */
     Rectangle {
         width: parent.width
         height: 34
@@ -91,6 +93,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
     
+    /* Main Block */
     Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x
@@ -106,6 +109,7 @@ Rectangle {
             anchors.top: parent.top
             anchors.topMargin: @BOXTOPMARGIN@
             
+            /* user Block */
             Rectangle {
                 width: parent.width
                 height: parent.height
@@ -116,8 +120,8 @@ Rectangle {
                 anchors.left: parent.left
             }
             
-            /* Messages and warnings */
-            Column {
+            /* login failed message and caps warning */
+            Item {
                 anchors.centerIn: parent
                 /* Capslock warning */
                 CapsLock {
@@ -139,6 +143,7 @@ Rectangle {
                     font.pixelSize: 17
                 }
             }
+            /* End login failed message and caps warning */
             
             Item {
                 anchors.margins: 20
