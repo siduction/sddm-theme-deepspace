@@ -42,7 +42,7 @@ Rectangle {
         interval: 2500
         onTriggered: errorMessage.text = ""
     }
-    
+
     Connections {
         target: sddm
         onLoginFailed: {
@@ -55,7 +55,7 @@ Rectangle {
             errorMessage.text = textConstants.loginFailed
         }
     }
-    
+
     Repeater {
         model: screenModel
         Background {
@@ -74,14 +74,13 @@ Rectangle {
             }
         }
     }
-    
-    
+
     /* *****************************************************
      * workaround for light backgrounds,
      * deeepspace is especially made for dark backgrounds
      * ****************************************************/
     /* start blue box */
-    
+
     /* Top bar */
     Rectangle {
         width: parent.width
@@ -92,7 +91,7 @@ Rectangle {
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
     }
-    
+
     /* Main Block */
     Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
@@ -108,7 +107,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.top: parent.top
             anchors.topMargin: @BOXTOPMARGIN@
-            
+
             /* user Block */
             Rectangle {
                 width: parent.width
@@ -132,7 +131,7 @@ Rectangle {
                     color:"white"
                     font.pixelSize: 14
                 }
-                
+
                 /* Login faild message */
                 Text {
                     id: errorMessage
@@ -144,7 +143,7 @@ Rectangle {
                 }
             }
             /* End login failed message and caps warning */
-            
+
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
@@ -155,11 +154,11 @@ Rectangle {
                     anchors.top: parent.top
                     anchors.topMargin: 25
                     height: 51
-                    
+
                     Row {
                         id:labelRow
                         spacing: 12
-                        
+
                         Rectangle {
                             anchors.bottom: parent.bottom
                             width: 250; height: 21
@@ -171,7 +170,7 @@ Rectangle {
                                 font.pixelSize: 12
                             }
                         }
-                        
+
                         Rectangle {
                             anchors.bottom: parent.bottom
                             width: 250; height: 21
@@ -184,7 +183,7 @@ Rectangle {
                             }
                         }
                     }
-                    
+
                     Row {
                         id: userRow
                         anchors.right: parent.right
@@ -198,7 +197,7 @@ Rectangle {
                             radius: 3
                             KeyNavigation.backtab: login_button
                             KeyNavigation.tab: pw_entry
-                            
+
                             /***********************************************************************
                              * If you want the last successfully logged in user to be displayed,
                              * uncomment the "text: userModel.lastUser" row below
@@ -211,7 +210,7 @@ Rectangle {
                              ************************************************************************/
                             //text: userModel.lastUser
                         }
-                        
+
                         PwBox {
                             id: pw_entry
                             width: 250; height: 30
@@ -219,7 +218,6 @@ Rectangle {
                             radius: 3
                             KeyNavigation.backtab: user_entry
                             KeyNavigation.tab: session_button
-                            
                             Keys.onPressed: {
                                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                                     sddm.login(user_entry.text, pw_entry.text, menu_session.index)
@@ -229,7 +227,7 @@ Rectangle {
                         }
                     }
                 }
-                
+
                 Item {
                     width: 512; height: 36
                     anchors.top: parent.top
@@ -237,46 +235,46 @@ Rectangle {
                     anchors.right: parent.right
                     anchors.leftMargin: 5
                     anchors.topMargin: 66
-                    
+
                     /* tooltips buttonRow */
                     ToolTip {
                         id: tooltip2
                         target: login_button
                         text: textConstants.login
                     }
-                    
+
                     ToolTip {
                         id: tooltip3
                         target: session_button
                         text: textConstants.session
                     }
-                    
+
                     ToolTip {
                         id: tooltip4
                         target: system_button
                         text: textConstants.shutdown
                     }
-                    
+
                     ToolTip {
                         id: tooltip5
                         target: reboot_button
                         text: textConstants.reboot
                     }
-                    
+
                     /* there is no translation in sddm for it */
                     ToolTip {
                         id: tooltip6
                         target: suspend_button
                         text: "Suspend" // textConstants.suspend
                     }
-                    
+
                     /* there is no translation in sddm for it */
                     ToolTip {
                         id: tooltip7
                         target: hibernate_button
                         text: "Hibernate" //textConstants.hibernate
                     }
-                    
+
                     Row {
                         spacing: 15
                         Rectangle {
@@ -290,7 +288,7 @@ Rectangle {
                                 height: 36
                                 anchors.topMargin:10
                                 spacing: 8
-                                
+
                                 ImageButton {
                                     id: session_button
                                     height: 32
@@ -300,7 +298,7 @@ Rectangle {
                                     KeyNavigation.backtab: pw_entry;
                                     KeyNavigation.tab: system_button
                                 }
-                                
+
                                 ImageButton {
                                     id: system_button
                                     height: 32
@@ -309,7 +307,7 @@ Rectangle {
                                     KeyNavigation.backtab: session_button;
                                     KeyNavigation.tab: reboot_button
                                 }
-                                
+
                                 ImageButton {
                                     id: reboot_button
                                     height: 32
@@ -318,7 +316,7 @@ Rectangle {
                                     KeyNavigation.backtab: system_button;
                                     KeyNavigation.tab: suspend_button
                                 }
-                                
+
                                 ImageButton {
                                     id: suspend_button
                                     height: 32
@@ -328,7 +326,7 @@ Rectangle {
                                     KeyNavigation.backtab: reboot_button
                                     KeyNavigation.tab: hibernate_button
                                 }
-                                
+
                                 ImageButton {
                                     id: hibernate_button
                                     height: 32
@@ -338,7 +336,7 @@ Rectangle {
                                     KeyNavigation.backtab: suspend_button
                                     KeyNavigation.tab: login_button
                                 }
-                                
+
                                 ImageButton {
                                     id: login_button
                                     height: 32
@@ -348,7 +346,7 @@ Rectangle {
                                     KeyNavigation.tab: user_entry
                                 }
                             }
-                            
+
                             SessionMenu {
                                 id: menu_session
                                 width: 200; height: 0
@@ -362,7 +360,7 @@ Rectangle {
                 }
             }
         }
-        
+
         Text {
             id:hostName
             anchors.top: parent.top
@@ -370,17 +368,17 @@ Rectangle {
             anchors.leftMargin:20
             anchors.topMargin:10
             color:"white"
-            
+
             text:/*textConstants.welcomeText.arg */(sddm.hostName)
             font.pixelSize: 12
         }
-        
+
         Timer {
             id: time
             interval: 100
             running: true
             repeat: true
-            
+
             /* The DateTime format is displayed like the the system setup, 
             * to change the DateTime format e.g. for the USA change it to (new Date(),"MM-dd-yyyy, hh:mm ap")
             * or you can try LongFormat,ShortFormat or NarrowFormat, it is your choise */
@@ -388,7 +386,7 @@ Rectangle {
                 dateTime.text = Qt.formatDateTime(new Date(), Locale.LongFormat)
             }
         }
-        
+
         Text { 
             id:dateTime
             anchors.top: parent.top
@@ -397,7 +395,7 @@ Rectangle {
             anchors.topMargin:10
             color: "white"
         }
-        
+
         Component.onCompleted: {
             if (user_entry.text === "")
                 user_entry.focus = true
