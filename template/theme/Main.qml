@@ -118,7 +118,7 @@ Rectangle {
                 anchors.top: parent.top
                 anchors.left: parent.left
             }
-            
+
             /* login failed message and caps warning */
             Item {
                 anchors.centerIn: parent
@@ -147,7 +147,7 @@ Rectangle {
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
-                
+
                 Column {
                     anchors.left: parent.left
                     anchors.leftMargin: 5
