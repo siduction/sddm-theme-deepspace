@@ -1,9 +1,9 @@
 [SddmGreeterTheme]
 Name=paintitblack
-Description=PaintItBlack sddm theme, based on elarun SddmGreeterTheme.
+Description=PaintItBlack sddm theme
 Type=sddm-theme
 Author=Hendrik Lehmbruch
-Copyright=2015, Hendrik Lehmbruch
+Copyright=2016, Hendrik Lehmbruch
 License=EXPAT
 Screenshot=images/preview.jpg
 Version=0.1
@@ -12,4 +12,4 @@ ConfigFile=theme.conf
 TranslationsDirectory=translations
 Theme-Id=paintitblack
 Theme-API=2.0
-Website=https://github.com/sddm/sddm
+Website=https://github.com/siduction/sddm-theme-deepspace

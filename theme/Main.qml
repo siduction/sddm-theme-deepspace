@@ -35,17 +35,24 @@ Rectangle {
     LayoutMirroring.enabled: Qt.locale().textDirection == Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
     TextConstants { id: textConstants }
+
+    /* Resets the "Login Failed" message after 2,5 seconds */
+    Timer {
+        id: errorMessageResetTimer
+        interval: 2500
+        onTriggered: errorMessage.text = ""
+    }
+
     Connections {
         target: sddm
-        onLoginSucceeded: {
-        }
-        onLoginFailed: {            
+        onLoginFailed: {
+            /* on fail login, clean user and password entry */
             pw_entry.text = ""
             user_entry.text = ""
             user_entry.focus = true
-            errorMessage.color = "white"
+            /* Reset the message*/
+            errorMessageResetTimer.restart()
             errorMessage.text = textConstants.loginFailed
-            errorMessage.background = "black"
         }
     }
 
@@ -68,12 +75,13 @@ Rectangle {
         }
     }
 
-
     /* *****************************************************
-    * workaround for light backgrounds,
-    * deeepspace is especially made for dark backgrounds
-    * ****************************************************/
+     * workaround for light backgrounds,
+     * deeepspace is especially made for dark backgrounds
+     * ****************************************************/
     /* start blue box */
+
+    /* Top bar */
     Rectangle {
         width: parent.width
         height: 34
@@ -84,6 +92,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+    /* Main Block */
     Rectangle {
         property variant geometry: screenModel.geometry(screenModel.primary)
         x: geometry.x
@@ -99,6 +108,7 @@ Rectangle {
             anchors.top: parent.top
             anchors.topMargin: 150
 
+            /* user Block */
             Rectangle {
                 width: parent.width
                 height: parent.height
@@ -109,47 +119,34 @@ Rectangle {
                 anchors.left: parent.left
             }
 
-            /* Messages and warnings */
-            Column {
+            /* login failed message and caps warning */
+            Item {
                 anchors.centerIn: parent
                 /* Capslock warning */
-                Rectangle {
-                    anchors.centerIn: parent
-                    CapsLock {
-                        id: txtCaps
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        anchors.top: parent.top
-                        anchors.topMargin: -65
-                        color:"white"
-                        font.pixelSize: 14
-                    }
+                CapsLock {
+                    id: txtCaps
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.top: parent.top
+                    anchors.topMargin: -60
+                    color:"white"
+                    font.pixelSize: 14
                 }
 
                 /* Login faild message */
-                Rectangle {
-                    anchors.centerIn: parent
-                    anchors.fill: parent
+                Text {
+                    id: errorMessage
+                    anchors.horizontalCenter: parent.horizontalCenter
                     anchors.top: parent.top
-                    anchors.topMargin: -80
-                    Text {
-                        id: errorMessage
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        color:"white"
-                        font.pixelSize: 17
-                        //text: textConstants.prompt
-                    }
+                    anchors.topMargin: -74
+                    color:"white"
+                    font.pixelSize: 17
                 }
             }
+            /* End login failed message and caps warning */
 
             Item {
                 anchors.margins: 20
                 anchors.fill: parent
-
-                /* workaround to focus the user_entry, see below the TextBox user_entry */
-                property alias user: user_entry.text
-
-                /* workaround to focus pw_entry if needed */
-                property alias password: pw_entry.text
 
                 Column {
                     anchors.left: parent.left
@@ -201,30 +198,16 @@ Rectangle {
                             KeyNavigation.backtab: login_button
                             KeyNavigation.tab: pw_entry
 
-                            /*** hack found in plasma breeze sddm as workaround to focus input field ***/
-                            /*****************************************************************************
-                            * focus works in qmlscene
-                            * but this seems to be needed when loaded from SDDM
-                            * I don't understand why, but we have seen this before in the old lock screen
-                            ******************************************************************************/
-                            Timer {
-                                interval: 200
-                                running: true
-                                repeat: false
-                                onTriggered: user_entry.forceActiveFocus()
-                            }
-                            /* end hack */
-
                             /***********************************************************************
-                            * If you want the last successfully logged in user to be displayed,
-                            * uncomment the "text: userModel.lastUser" row below
-                            * for more informations why it isn't possible to configure it via
-                            * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
-                            * so i wait, till this is fixed in debian sid.
-                            * Dont forget to enable it in the /etc/sddm.conf
-                            * "RememberLastUser=true",
-                            * also take a look to the pw_entry section below!
-                            ************************************************************************/
+                             * If you want the last successfully logged in user to be displayed,
+                             * uncomment the "text: userModel.lastUser" row below
+                             * for more informations why it isn't possible to configure it via
+                             * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
+                             * so i wait, till this is fixed in debian sid.
+                             * Dont forget to enable it in the /etc/sddm.conf
+                             * "RememberLastUser=true",
+                             * also take a look to the pw_entry section below!
+                             ************************************************************************/
                             //text: userModel.lastUser
                         }
 
@@ -235,23 +218,6 @@ Rectangle {
                             radius: 3
                             KeyNavigation.backtab: user_entry
                             KeyNavigation.tab: session_button
-
-                            /***************************************************************
-                            * if you uncomment the "text: userModel.lastUser" row above,
-                            * uncomment the Timer section below too,
-                            * But also comment the Timer section above, so that the
-                            * password box is focused and not the user box.
-                            * **************************************************************/
-
-                            /* start hack */
-                            // Timer {
-                            //     interval: 200
-                            //     running: true
-                            //     repeat: false
-                            //     onTriggered: pw_entry.forceActiveFocus()
-                            // }
-                            /* end hack */
-
                             Keys.onPressed: {
                                 if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                                     sddm.login(user_entry.text, pw_entry.text, menu_session.index)
@@ -259,21 +225,6 @@ Rectangle {
                                 }
                             }
                         }
-
-                        /* tooltips for the input fields */
-                        /* no translation or text avialable */
-                        // ToolTip {
-                        //     id: tooltip0
-                        //     target: user_entry
-                        //     text: textConstants.promptUser
-                        // }
-
-                        /* no translation or text avialable */
-                        // ToolTip {
-                        //    id: tooltip1
-                        //    target: pw_entry
-                        //    text: textConstants.promptPassword
-                        // }
                     }
                 }
 
@@ -343,7 +294,7 @@ Rectangle {
                                     height: 32
                                     source: "images/siductionlogin-white.png"
                                     onClicked: if (menu_session.state === "visible") menu_session.state = ""; else
-                                                   menu_session.state = "visible"
+                                    menu_session.state = "visible"
                                     KeyNavigation.backtab: pw_entry;
                                     KeyNavigation.tab: system_button
                                 }
@@ -410,40 +361,39 @@ Rectangle {
             }
         }
 
-        Rectangle {
-            id: infoHost
-            anchors.left: parent.left; anchors.top: parent.top
+        Text {
+            id:hostName
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.leftMargin:20
             anchors.topMargin:10
+            color:"white"
 
-            Text {
-                id:hostName
-                anchors.left: parent.left
-                anchors.leftMargin:20
-                anchors.topMargin:15
-                color:"white"
+            text:/*textConstants.welcomeText.arg */(sddm.hostName)
+            font.pixelSize: 12
+        }
 
-                /*******************************************************************
-                * Now, only the hostName is displayed.
-                * "Welcome to" is not displayed
-                * i decided that it looks nicer like it is, without the "welcome to"
-                * Feel free to change it
-                *******************************************************************/
-                text:sddm.hostName //textConstants.welcomeText.arg(sddm.hostName)
-                font.pixelSize: 12
+        Timer {
+            id: time
+            interval: 100
+            running: true
+            repeat: true
+
+            /* The DateTime format is displayed like the system setup, 
+            * to change the DateTime format e.g. for the US, change it to (new Date(),"MM-dd-yyyy, hh:mm ap")
+            * or you can try LongFormat,ShortFormat or NarrowFormat, it is your choise */
+            onTriggered: {
+                dateTime.text = Qt.formatDateTime(new Date(), Locale.LongFormat)
             }
         }
 
-        Rectangle {
-            id: infoDate
-            anchors.right: parent.right; anchors.top: parent.top
+        Text { 
+            id:dateTime
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.rightMargin:20
             anchors.topMargin:10
-            
-            TimeDate { 
-                    id: clock
-                    anchors.right: parent.right
-                    anchors.rightMargin:20
-                    color: "white"
-            }
+            color: "white"
         }
 
         Component.onCompleted: {
