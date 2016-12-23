@@ -56,21 +56,21 @@ function onVisibleStatus(flag)
 Component.onCompleted: {
  var itemParent = toolTipRoot.target;
  
-var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal 
-showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged: 
+var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal
+showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged:
 {mouserHover(mouseX, mouseY)} onEntered: {showChanged(true)} onExited:{showChanged(false)}}',
  itemParent, "mouseItem");
  newObject.mouserHover.connect(onMouseHover);
- newObject.showChanged.connect(onVisibleStatus); 
+ newObject.showChanged.connect(onVisibleStatus);
  }
  
     Item {
-        
+
     id: toolTipContainer
     z: toolTipRoot.z + 1
     width: content.width
     height: content.height
-    
+
         Rectangle {
         id: content
         anchors.centerIn: parent
@@ -79,27 +79,42 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
         color: "#333335" //"#053343"
         border.color: "white"
         border.width: 1
-        opacity: 0.9 
+        opacity: 0.9
         radius: 3
-        
+
             Text {
             id: toolTip
             anchors {fill: parent; margins: 5}
-            wrapMode: Text.WrapAnywhere 
+            wrapMode: Text.WrapAnywhere
             color: "white"
-            //font.bold: true
             }
         }
     }
 
-    NumberAnimation {
+    SequentialAnimation {
         id: fadein
-        target: toolTipContainer
-        property: "opacity"
-        easing.type: Easing.InOutQuad
-        duration: 1000
-        from: 0
-        to: 1
-    }
+        
+        NumberAnimation {
+            target: toolTipContainer
+            property: "opacity"
+            easing.type: Easing.InOutQuad
+            duration: 750
+            from: 0
+            to: 1
+        }
+
+        PauseAnimation {
+            duration: 500
+        }
+
+        NumberAnimation {
+            target: toolTipContainer
+            property: "opacity"
+            easing.type: Easing.InOutQuad
+            duration: 750
+            from: 1
+            to: 0
+        }
+     }
     onVisibleChanged: if(visible)fadein.start();
 }
