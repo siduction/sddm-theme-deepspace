@@ -43,7 +43,7 @@ sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     -e "s/\@REMEMBERLASTSESSION\@/${REMEMBERLASTSESSION}/g" \
     -e "s/\@REMEMBERLASTUSER\@/${REMEMBERLASTUSER}/g" \
     template/etc/sddm.conf \
-    > etc/sddm-${CODENAME_SAFE}.conf
+    > etc/sddm.conf
 
 #theme
 rm -rf theme
@@ -61,7 +61,7 @@ sed -e "s/\@CODENAME_SAFE\@/${CODENAME_SAFE}/g" \
     > theme/Main.qml
 
 sed -e "s#\@CODENAME_SAFE\@#${CODENAME_SAFE}#g" \
-    -e "s#\@DISPLAY_NAME\@#${DISPLAY_NAME}#g" \
+    -e "s#\@DISPLAY_NAME\@#${DISPLAY_NAME}#g" 
     -e "s#\@PREVIEW\@#${PREVIEW}#g" \
     template/theme/metadata.desktop \
     > theme/metadata.desktop
