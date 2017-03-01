@@ -1,3 +1,22 @@
+sddm-theme-patience (2017.1.0-2) unstable; urgency=medium
+
+  * fix sddm.conf
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 01 Mar 2017 18:57:19 +0100
+
+sddm-theme-patience (2017.1.0-1) unstable; urgency=medium
+
+  * release branding
+  * added postinst and prerm - using debian alternatives
+
+ -- Alf Gaida <agaida@siduction.org>  Wed, 01 Mar 2017 17:13:15 +0100
+
+sddm-theme-patience (2016.1.0-2) unstable; urgency=medium
+
+  * new sddm.conf handling
+
+ -- Alf Gaida <agaida@siduction.org>  Fri, 27 Jan 2017 21:38:59 +0100
+
 sddm-theme-patience (2016.1.0-1) unstable; urgency=medium
 
   * the release is near
