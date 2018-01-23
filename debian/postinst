@@ -1,18 +1,26 @@
-#!/bin/sh
+#!/bin/bash
 # postinst script for #PACKAGE#
 #
 # see: dh_installdeb(1)
 
 set -e
 
+
+if [[ "$1" = "configure" || "$1" = "abort-upgrade" || "$1" = "abort-remove" ]]; then
+    update-alternatives --install \
+        /usr/share/sddm/themes/debian-theme \
+        sddm-debian-theme \
+        /usr/share/sddm/themes/patience 50
+fi
+
 case "$1" in
     configure)
         # keep the old configuration
-#       if [ -f /etc/sddm.conf ]; then
-#           cp -f /usr/share/sddm/themes/paintitblack/sddm.conf /etc/sddm.conf.dpkg-new
-#       else
-#           cp -f /usr/share/sddm/themes/paintitblack/sddm.conf /etc/sddm.conf
-#       fi
+        if [ -f /etc/sddm.conf ]; then
+            cp -f /usr/share/sddm/paintitblack/sddm.conf /etc/sddm.conf.dpkg-new
+        else
+            cp -f /usr/share/sddm/paintitblack/sddm.conf /etc/sddm.conf
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -27,3 +35,4 @@ esac
 #DEBHELPER#
 
 exit 0
+	
