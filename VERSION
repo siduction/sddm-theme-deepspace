@@ -2,6 +2,7 @@
 
 WALLPAPER=paintitblack
 CODENAME_SAFE=paintitblack
+CODENAME='PaintItBlack'
 DISPLAY_NAME='PaintItBlack'
 VERSION=2015.1.0
 DISTRIBUTION=unstable
