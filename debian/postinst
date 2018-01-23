@@ -10,7 +10,7 @@ if [[ "$1" = "configure" || "$1" = "abort-upgrade" || "$1" = "abort-remove" ]]; 
     update-alternatives --install \
         /usr/share/sddm/themes/debian-theme \
         sddm-debian-theme \
-        /usr/share/sddm/themes/patience 50
+        /usr/share/sddm/themes/@CODENAME_SAFE@ 50
 fi
 
 case "$1" in
