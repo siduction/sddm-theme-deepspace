@@ -1,3 +1,9 @@
+sddm-theme-paintitblack (2018.01.23-4) unstable; urgency=medium
+
+  * use the alternative debian-theme
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 23 Jan 2018 23:59:07 +0100
+
 sddm-theme-paintitblack (2018.01.23-3) unstable; urgency=medium
 
   * Fix theme setting in sddm.conf
