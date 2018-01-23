@@ -17,7 +17,7 @@ Depends: ${misc:Depends},
          qml-module-qtquick-controls
 Recommends: sddm
 Provides: sddm-theme
-Description:  theme for sddm
+Description: Paintitblack theme for sddm
  Siduction "" sddm theme.
  .
  This package contain a sddm theme.
