@@ -1,3 +1,9 @@
+sddm-theme-paintitblack (2018.01.23-3) unstable; urgency=medium
+
+  * Fix theme setting in sddm.conf
+
+ -- Alf Gaida <agaida@siduction.org>  Tue, 23 Jan 2018 23:33:22 +0100
+
 sddm-theme-paintitblack (2018.01.23-2) unstable; urgency=medium
 
   * fixed VERSIONS
