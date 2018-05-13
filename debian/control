@@ -4,10 +4,10 @@ Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
 Priority: optional
 Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-#Vcs-Browser: http://git.siduction.org/extra/sddm-theme-siduction
-#Vcs-Git: https://git.siduction.org/extra/sddm-theme-siduction
-#Homepage: https://git.siduction.org/extra/
+Standards-Version: 4.1.4
+Vcs-Browser: https://github.com/siduction/sddm-theme-deepspace
+Vcs-Git: https://github.com/siduction/sddm-theme-deepspace.git
+Homepage: https://github.com/siduction/sddm-theme-deepspace
 
 Package: sddm-theme-patience
 Architecture: all
@@ -18,6 +18,6 @@ Depends: ${misc:Depends},
 Recommends: sddm
 Provides: sddm-theme
 Description:  theme for sddm
- Siduction "" sddm theme.
+ Siduction Patience sddm theme.
  .
  This package contain a sddm theme.
