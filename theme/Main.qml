@@ -238,17 +238,17 @@ Rectangle {
                     
                     /* tooltips user and pw row */
         
-                    /** there is no translation in sddm for it, but soon **/
+                    /** there is no translation in sddm for it, but soon, waiting for the >= sddm 0.18 release **/
                     Components.ToolTip {
                         id: tooltip0
                         target: user_entry
-                        text: Enter your username //text: textConstants.promptUser
+                        text: "Enter your username" //text: textConstants.promptUser
                     }
 
                     Components.ToolTip {
                         id: toolTip1
                         target: pw_entry
-                        text: Enter your password //text: textConstants.promptPassword
+                        text: "Enter your password" //text: textConstants.promptPassword
                     }
                     /* end tooltips user and pw row */
 
