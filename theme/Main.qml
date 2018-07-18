@@ -235,6 +235,22 @@ Rectangle {
                     anchors.right: parent.right
                     anchors.leftMargin: 5
                     anchors.topMargin: 66
+                    
+                    /* tooltips user and pw row */
+        
+                    /** there is no translation in sddm for it, but soon **/
+                    Components.ToolTip {
+                        id: tooltip0
+                        target: user_entry
+                        text: Enter your username //text: textConstants.promptUser
+                    }
+
+                    Components.ToolTip {
+                        id: toolTip1
+                        target: pw_entry
+                        text: Enter your password //text: textConstants.promptPassword
+                    }
+                    /* end tooltips user and pw row */
 
                     /* tooltips buttonRow */
                     ToolTip {
@@ -274,6 +290,7 @@ Rectangle {
                         target: hibernate_button
                         text: "Hibernate" //textConstants.hibernate
                     }
+                    /* end tooltips buttonRow */
 
                     Row {
                         spacing: 15
