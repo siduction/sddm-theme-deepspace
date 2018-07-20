@@ -237,18 +237,16 @@ Rectangle {
                     anchors.topMargin: 66
                     
                     /* tooltips user and pw row */
-        
-                    /** there is no translation in sddm for it, but soon, waiting for the >= sddm 0.18 release **/
                     Components.ToolTip {
                         id: tooltip0
                         target: user_entry
-                        text: "Enter your username" //text: textConstants.promptUser
+                        text: text: textConstants.promptUser
                     }
 
                     Components.ToolTip {
                         id: toolTip1
                         target: pw_entry
-                        text: "Enter your password" //text: textConstants.promptPassword
+                        text: text: textConstants.promptPassword
                     }
                     /* end tooltips user and pw row */
 
@@ -281,14 +279,14 @@ Rectangle {
                     ToolTip {
                         id: tooltip6
                         target: suspend_button
-                        text: "Suspend" // textConstants.suspend
+                        text: textConstants.suspend
                     }
 
                     /* there is no translation in sddm for it */
                     ToolTip {
                         id: tooltip7
                         target: hibernate_button
-                        text: "Hibernate" //textConstants.hibernate
+                        text: textConstants.hibernate
                     }
                     /* end tooltips buttonRow */
 
