@@ -200,15 +200,10 @@ Rectangle {
 
                             /***********************************************************************
                              * If you want the last successfully logged in user to be displayed,
-                             * uncomment the "text: userModel.lastUser" row below
-                             * for more informations why it isn't possible to configure it via
-                             * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
-                             * so i wait, till this is fixed in debian sid.
                              * Dont forget to enable it in the /etc/sddm.conf
                              * "RememberLastUser=true",
-                             * also take a look to the pw_entry section below!
                              ************************************************************************/
-                            //text: userModel.lastUser
+                            text: userModel.lastUser
                         }
 
                         PwBox {
