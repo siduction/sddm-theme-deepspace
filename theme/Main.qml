@@ -52,6 +52,9 @@ Rectangle {
         /* on fail login, clean user and password entry */
         onLoginFailed: {
             pw_entry.text = ""
+            pw_entry.echoMode = TextInput.Password
+            showPw_button.source = "images/visibility.svg"
+            tooltip8.text = "show password"
             user_entry.text = ""
             user_entry.focus = true            
             /* Reset the message*/
@@ -85,10 +88,11 @@ Rectangle {
         id: topBar
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        width: parent.width
+        width: 350 //parent.width
         height: 34
         color: "#154e5e"//"#333335"
-        opacity: 0.75 
+        opacity: 0.75
+        radius: 6
     }   
     /* end topBar */
     
