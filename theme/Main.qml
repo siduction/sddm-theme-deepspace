@@ -102,7 +102,7 @@ Rectangle {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
-        source: "images/footer.png"
+        source: "images/footer.svg"
         fillMode: Image.PreserveAspectFit
     }*/
     /* end footerPic */ 
@@ -270,7 +270,8 @@ Rectangle {
                             
                         }                        
                     }
-                /* show password not */   
+                    
+                /* show / hide password */   
                 ImageButton {
                     id:  showPw_button
                     source: "images/visibility.svg"
@@ -346,13 +347,7 @@ Rectangle {
                  }
                 /* end buttonRow */
 
-                /* ************************************************
-                 * drop down menu session button 
-                 * comment it out, if you don't wont it 
-                 * don't forget the session_button above 
-                 * also the KeyNavigation of the next button is a
-                 * thought worth than, ... okay?
-                 * ************************************************/
+                /* drop down menu session button */
                 Components.SessionMenu {                    
                     id: menu_session
                     width: 145
@@ -478,12 +473,5 @@ Rectangle {
         }
         /* end hostname */
     }
-
-//     Component.onCompleted: {
-//         if (user_entry.text === "")
-//             user_entry.focus = true
-//             else
-//                 pw_entry.focus = true
-//     }
 
 } /* fine */
