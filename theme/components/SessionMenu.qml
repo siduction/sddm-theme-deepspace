@@ -28,14 +28,15 @@ import QtQuick 2.0
 Rectangle {
     id: menu
 
-    width: 200; height: 0
+    width: 145
+    height: 0
     radius: 3
 
     property int itemHeight: 30
     property alias model: menuList.model
     property alias index: menuList.currentIndex
 
-    Behavior on height { NumberAnimation { duration: 100 } }
+    Behavior on height { NumberAnimation { duration: 300 } }
 
     states: [
         State {
@@ -48,16 +49,19 @@ Rectangle {
         id: listViewItem
 
         Rectangle {
-            color: mouseArea.containsMouse ? "#FF4500": "transparent"   //"steelblue" : "transparent"         
-            radius: 3
+            color: mouseArea.containsMouse ? /*"#aca793"*/"#17586a" : "#154e5e"//"#333335" 
+            radius:3
             width: parent.width; height: menu.itemHeight
-
-            Text {
+            border.color: "white"
+            border.width: 1
+            
+	    Text {
                 anchors.fill: parent
                 anchors.margins: 4
 
                 text: model.name
                 elide: Text.ElideRight
+		color: "white"
 
                 verticalAlignment: Text.AlignVCenter
             }
@@ -65,7 +69,7 @@ Rectangle {
             MouseArea {
                 id: mouseArea
                 anchors.fill: parent
-                cursorShape: Qt.PointingHandCursor
+                //cursorShape: Qt.PointingHandCursor
 
                 hoverEnabled: true
 
@@ -78,15 +82,17 @@ Rectangle {
     
 
 
-        ListView {
+       ListView {
             id: menuList
                 
             anchors.fill: parent                
             clip: true
             delegate: listViewItem
-            highlight: Rectangle { color: "#FF4500"
-            radius: 3 /*"lightsteelblue"*/ }
+            highlight: Rectangle { 
+                color: "#154e5e" //"#333335"
+                radius: 3
+                //opacity : 0.1
+            } 
         }
-        
 }
 

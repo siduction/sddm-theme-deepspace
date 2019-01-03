@@ -1,5 +1,5 @@
 /***************************************************************************
-+ Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
++ Copyright: 2015-2017 Hendrik Lehmbruch <hendrikL@siduction.org>
 *
 * Permission is hereby granted, free of charge, to any person
 * obtaining a copy of this software and associated documentation
@@ -56,36 +56,36 @@ function onVisibleStatus(flag)
 Component.onCompleted: {
  var itemParent = toolTipRoot.target;
  
-var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal
-showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged:
+var newObject = Qt.createQmlObject('import QtQuick 2.0; MouseArea {signal mouserHover(int x, int y); signal 
+showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons: Qt.NoButton; onPositionChanged: 
 {mouserHover(mouseX, mouseY)} onEntered: {showChanged(true)} onExited:{showChanged(false)}}',
  itemParent, "mouseItem");
  newObject.mouserHover.connect(onMouseHover);
- newObject.showChanged.connect(onVisibleStatus);
+ newObject.showChanged.connect(onVisibleStatus); 
  }
  
     Item {
-
+        
     id: toolTipContainer
     z: toolTipRoot.z + 1
     width: content.width
     height: content.height
-
+    
         Rectangle {
         id: content
         anchors.centerIn: parent
         width: toolTip.contentWidth + 10
         height: toolTip.contentHeight + 10
-        color: "#333335" //"#053343"
-        border.color: "white"
+        color: "#154e5e" //"#333335" //"black"
+        border.color: "white" //"steelblue"
         border.width: 1
-        opacity: 0.9
+        opacity: 0.9 
         radius: 3
-
+        
             Text {
             id: toolTip
             anchors {fill: parent; margins: 5}
-            wrapMode: Text.WrapAnywhere
+            //wrapMode: Text.WrapAnywhere 
             color: "white"
             }
         }
@@ -101,12 +101,12 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
             duration: 750
             from: 0
             to: 1
-        }
+        }       
 
         PauseAnimation {
-            duration: 500
+            duration: 750           
         }
-
+        
         NumberAnimation {
             target: toolTipContainer
             property: "opacity"
