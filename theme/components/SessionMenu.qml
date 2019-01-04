@@ -49,11 +49,12 @@ Rectangle {
         id: listViewItem
 
         Rectangle {
-            color: mouseArea.containsMouse ? /*"#aca793"*/"#17586a" : "#154e5e"//"#333335" 
+            color: mouseArea.containsMouse ? "#17586a" : "#17586"//"#333335" 
             radius:3
             width: parent.width; height: menu.itemHeight
             border.color: "white"
             border.width: 1
+            opacity : 0.85
             
 	    Text {
                 anchors.fill: parent
@@ -61,7 +62,7 @@ Rectangle {
 
                 text: model.name
                 elide: Text.ElideRight
-		color: "white"
+                color: "white"
 
                 verticalAlignment: Text.AlignVCenter
             }
@@ -89,9 +90,9 @@ Rectangle {
             clip: true
             delegate: listViewItem
             highlight: Rectangle { 
-                color: "#154e5e" //"#333335"
+                color: "#17586a"//"#333335"
                 radius: 3
-                //opacity : 0.1
+                //opacity : 0.10
             } 
         }
 }
