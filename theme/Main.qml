@@ -56,8 +56,9 @@ Rectangle {
             showPw_button.source = "images/visibility.svg"
             tooltip8.text = "show password"
             user_entry.text = ""
-            user_entry.focus = true            
-            /* Reset the message*/
+            user_entry.focus = true 
+            
+            /* and Reset the message*/
             errorMessageResetTimer.restart()
             errorMessage.text = textConstants.loginFailed
         }
@@ -71,7 +72,7 @@ Rectangle {
             width: geometry.width
             height:geometry.height
             source: config.background
-            fillMode: /*Image.PreserveAspectFit*/ Image.PreserveAspectCrop
+            fillMode:Image.PreserveAspectCrop /*Image.PreserveAspectFit*/
 
             KeyNavigation.backtab: user_entry; KeyNavigation.tab: user_entry
 
@@ -88,7 +89,7 @@ Rectangle {
         id: topBar
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 490 //parent.width
+        width: 490
         height: 34
         color: "#333335"
         opacity: 0.75
@@ -114,7 +115,7 @@ Rectangle {
         anchors.topMargin: 290
         width: 490
         height: 150
-        color: "transparent" // "#00000000"
+        color: "transparent" /*must be transparent*/
         radius: 12
         
         Rectangle {
@@ -153,12 +154,6 @@ Rectangle {
             anchors.top: parent.top
             anchors.topMargin: 55
             
-            /* workaround to focus the user_entry, see below the TextBox user_entry */
-            property alias user: user_entry.text
-
-            /* workaround to focus pw_entry if needed */
-            property alias password: pw_entry.text
-
             Column {
                 height: 71
                 spacing: 7
@@ -201,25 +196,6 @@ Rectangle {
 
                     Components.UserBox {
                         id: user_entry
-
-                        /* I THINK THERE IS NO NEED FOR THAT HACK ANY MORE, BUT I LEAVE IT AS IT IS */
-
-                        /*** hack found in plasma breeze sddm as workaround to focus input field ***/
-                        /***************************************************************************** 
-                         * focus works in qmlscene
-                         * but this seems to be needed when loaded from SDDM
-                         * I don't understand why, but we have seen this before in the old lock screen
-                         ******************************************************************************/ 
-
-                        /* start hack */
-                        Timer {
-                            interval: 200
-                            running: true
-                            repeat: false
-                            onTriggered: user_entry.forceActiveFocus()
-                        }
-                        /* end hack */
-
                         width: 210
                         height: 25
 
@@ -244,16 +220,6 @@ Rectangle {
 
                     Components.PwBox {
                         id: pw_entry
-
-                        /* start hack */
-                        Timer {
-                            interval: 200
-                            running: true
-                            repeat: false
-                            onTriggered: pw_entry.forceActiveFocus()
-                        }
-                        /* end hack */
-
                         width: 210
                         height: 25
                         font.pixelSize: 14
@@ -271,11 +237,15 @@ Rectangle {
                         }                        
                     }
                     
-                /* show / hide password */   
+                /************************************************* 
+                 * show or hide password
+                 * if you dont want that feature, comment it aout
+                 *************************************************/   
                 ImageButton {
                     id:  showPw_button
                     source: "images/visibility.svg"
                     height: 24
+                    
                     onClicked: if (pw_entry.echoMode === TextInput.Password) pw_entry.echoMode = TextInput.Normal, showPw_button.source = "images/hint.svg", tooltip8.text = "hide password", pw_entry.focus = true; else 
                     pw_entry.echoMode = TextInput.Password, showPw_button.source = "images/visibility.svg", tooltip8.text = "show password", pw_entry.focus = true                       
                     }
@@ -315,7 +285,7 @@ Rectangle {
                         KeyNavigation.backtab: system_button; KeyNavigation.tab: suspend_button
                     }
 
-                     ImageButton {
+                    ImageButton {
                          id: suspend_button
                          height: 27
                          source: "images/system_suspend.png"
@@ -440,12 +410,13 @@ Rectangle {
              *      dateTime.text = new Date(),"MM-dd-yyyy, hh:mm ap"             
              * or you can try LongFormat, ShortFormat or NarrowFormat, it is your choise.
              * eg.:             * 
-             *      dateTime.text = Qt.formatDateTime(new Date(), ShortFormat)             
+             *      dateTime.text = Qt.formatDateTime(new Date(), ShortFormat)
+             *      dateTime.text = Qt.formatDateTime(new Date(), Locale.LongFormat)             
              * Or if you want a really long formated DateTime try this:
              *      dateTime.text = new Date().toLocaleString(Qt.locale())
              ****************************************************************************/
             onTriggered: {
-                dateTime.text = Qt.formatDateTime(new Date(), Locale.LongFormat)
+                dateTime.text = new Date().toLocaleString(Qt.locale())
             }
         }
         
