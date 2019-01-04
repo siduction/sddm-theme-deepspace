@@ -76,7 +76,7 @@ showChanged(bool flag); anchors.fill:parent; hoverEnabled: true; acceptedButtons
         anchors.centerIn: parent
         width: toolTip.contentWidth + 10
         height: toolTip.contentHeight + 10
-        color: "#154e5e" //"#333335" //"black"
+        color: "#333335" //"black"
         border.color: "white" //"steelblue"
         border.width: 1
         opacity: 0.9 
