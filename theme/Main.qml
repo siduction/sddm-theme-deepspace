@@ -88,9 +88,9 @@ Rectangle {
         id: topBar
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 350 //parent.width
+        width: 490 //parent.width
         height: 34
-        color: "#154e5e"//"#333335"
+        color: "#333335"
         opacity: 0.75
         radius: 6
     }   
@@ -115,14 +115,14 @@ Rectangle {
         width: 490
         height: 150
         color: "transparent" // "#00000000"
-        radius: 6
+        radius: 12
         
         Rectangle {
        		width: 490
        		height: 150
-        	color: "#154e5e"//"#333335"
+        	color: "#333335"
         	opacity: 0.75 /* background opacity main block */
-        	radius: 6 
+        	radius: 12 
         }
 
         /* Messages and warnings */             
@@ -229,7 +229,7 @@ Rectangle {
                          * for more informations why it isn't possible to configure it via
                          * /etc/sddm.conf see https://bugzilla.redhat.com/show_bug.cgi?id=1238889
                          * so i wait, till this is fixed in debian sid.
-                         * Dont forget to enable it in the /etc/sddm.conf
+                         * Dont forget to disable it in the /etc/sddm.conf
                          * "RememberLastUser=true".
                          ************************************************************************/
 
