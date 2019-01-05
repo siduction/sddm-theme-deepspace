@@ -1,5 +1,5 @@
 /***************************************************************************
- * Copyright: 2015-2017 Hendrik Lehmbruch <hendrikL@siduction.org>
+ * Copyright: 2015-2019 Hendrik Lehmbruch <hendrikL@siduction.org>
  *            2013 Reza Fatahilah Shah <rshah0385@kireihana.com>
  *            2013 Abdurrahman AVCI <abdurrahmanavci@gmail.com>
  *
@@ -39,7 +39,7 @@ Rectangle {
 
     TextConstants { id: textConstants }
 
-    /* Resets the "Login Failed" message after 2½ seconds */
+    /* Resets the "Login Failed" message after 2,5 seconds */
     Timer {
         id: errorMessageResetTimer
         interval: 2500
@@ -52,11 +52,13 @@ Rectangle {
         /* on fail login, clean user and password entry */
         onLoginFailed: {
             pw_entry.text = ""
+            user_entry.text = ""
+            user_entry.focus = true
+            
+            /*reset showPw_button*/
             pw_entry.echoMode = TextInput.Password
             showPw_button.source = "images/visibility.svg"
             tooltip8.text = "show password"
-            user_entry.text = ""
-            user_entry.focus = true 
             
             /* and Reset the message*/
             errorMessageResetTimer.restart()
@@ -119,11 +121,11 @@ Rectangle {
         radius: 12
         
         Rectangle {
-       		width: 490
-       		height: 150
-        	color: "#333335"
-        	opacity: 0.75 /* background opacity main block */
-        	radius: 12 
+            width: 490
+            height: 150
+            color: "#333335"
+            opacity: 0.75 /* background opacity main block */
+            radius: 12 
         }
 
         /* Messages and warnings */             
@@ -239,7 +241,7 @@ Rectangle {
                     
                 /************************************************* 
                  * show or hide password
-                 * if you dont want that feature, comment it aout
+                 * if you dont want that feature, comment it out
                  *************************************************/   
                 ImageButton {
                     id:  showPw_button
@@ -249,6 +251,7 @@ Rectangle {
                     onClicked: if (pw_entry.echoMode === TextInput.Password) pw_entry.echoMode = TextInput.Normal, showPw_button.source = "images/hint.svg", tooltip8.text = "hide password", pw_entry.focus = true; else 
                     pw_entry.echoMode = TextInput.Password, showPw_button.source = "images/visibility.svg", tooltip8.text = "show password", pw_entry.focus = true                       
                     }
+                    /* end showPw_button*/
                 }
                 /* end input fields */
 
