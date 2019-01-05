@@ -272,7 +272,7 @@ Rectangle {
                     ImageButton {
                         id: session_button
                         height: 27
-                        source: "images/siductionlogin-white.png"
+                        source: "images/session_normal.svg"
                         onClicked: if (menu_session.state === "visible") menu_session.state = ""; else 
                         menu_session.state = "visible"
 
@@ -282,7 +282,7 @@ Rectangle {
                     ImageButton {
                         id: system_button
                         height: 27
-                        source: "images/system_shutdown.png"
+                        source: "images/system_shutdown.svg"
                         onClicked: sddm.powerOff()
 
                         KeyNavigation.backtab: session_button; KeyNavigation.tab: reboot_button
@@ -291,7 +291,7 @@ Rectangle {
                     ImageButton {
                         id: reboot_button
                         height: 27
-                        source: "images/system_reboot.png"
+                        source: "images/system_reboot.svg"
                         onClicked: sddm.reboot()
 
                         KeyNavigation.backtab: system_button; KeyNavigation.tab: suspend_button
@@ -300,7 +300,7 @@ Rectangle {
                     ImageButton {
                          id: suspend_button
                          height: 27
-                         source: "images/system_suspend.png"
+                         source: "images/system_suspend.svg"
                          visible: sddm.canSuspend
                          onClicked: sddm.suspend()
  
@@ -310,7 +310,7 @@ Rectangle {
                      ImageButton {
                          id: hibernate_button
                          height: 27
-                         source: "images/system_hibernate.png"
+                         source: "images/system_hibernate.svg"
                          visible: sddm.canHibernate
                          onClicked: sddm.hibernate()
  
@@ -320,7 +320,7 @@ Rectangle {
                      ImageButton {
                          id: login_button
                          height: 27
-                         source: "images/login_normal.png"                                                    
+                         source: "images/login_normal.svg"                                                    
 
                          onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
 
