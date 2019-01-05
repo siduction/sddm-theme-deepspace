@@ -248,8 +248,17 @@ Rectangle {
                     source: "images/visibility.svg"
                     height: 24
                     
-                    onClicked: if (pw_entry.echoMode === TextInput.Password) pw_entry.echoMode = TextInput.Normal, showPw_button.source = "images/hint.svg", tooltip8.text = "hide password", pw_entry.focus = true; else 
-                    pw_entry.echoMode = TextInput.Password, showPw_button.source = "images/visibility.svg", tooltip8.text = "show password", pw_entry.focus = true                       
+                    onClicked: if (pw_entry.echoMode === TextInput.Password) {
+                            pw_entry.echoMode = TextInput.Normal
+                            showPw_button.source = "images/hint.svg"
+                            tooltip8.text = "hide password"
+                            pw_entry.focus = true; 
+                        } else { 
+                            pw_entry.echoMode = TextInput.Password
+                            showPw_button.source = "images/visibility.svg"
+                            tooltip8.text = "show password"
+                            pw_entry.focus = true
+                        }
                     }
                     /* end showPw_button*/
                 }
