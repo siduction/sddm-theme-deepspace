@@ -58,7 +58,7 @@ Rectangle {
             /*reset showPw_button*/
             pw_entry.echoMode = TextInput.Password
             showPw_button.source = "images/visibility.svg"
-            tooltip8.text = "show password"
+            tooltip8.text = "show password" //textConstants.showPassword
             
             /* and Reset the message*/
             errorMessageResetTimer.restart()
