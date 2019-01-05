@@ -91,10 +91,10 @@ Rectangle {
         id: topBar
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 490
+        width: 490 //@BOXWIDTH@
         height: 34
-        color: "#333335"
-        opacity: 0.75
+        color: "#333335" //"@BOXCOLOR@"
+        opacity: 0.75 //@BOXOPACITY@
         radius: 6
     }   
     /* end topBar */
@@ -114,18 +114,18 @@ Rectangle {
     Rectangle {
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 290
-        width: 490
-        height: 150
+        anchors.topMargin: 290 //@BOXTOPMARGIN@
+        width: 490 //@BOXWIDTH@
+        height: 150 //@BOXHEIGHT@
         color: "transparent" /*must be transparent*/
-        radius: 12
+        radius: 12 //@BOXRADIUS@
         
         Rectangle {
-            width: 490
-            height: 150
-            color: "#333335"
-            opacity: 0.75 /* background opacity main block */
-            radius: 12 
+            width: 490 //@BOXWIDTH@
+            height: 150 //@BOXHEIGHT@
+            color: "#333335" //"@BOXCOLOR@"
+            opacity: 0.75 //@BOXOPACITY@ /* background opacity main block */
+            radius: 12 //@BOXRADIUS@
         }
 
         /* Messages and warnings */             
@@ -251,12 +251,12 @@ Rectangle {
                     onClicked: if (pw_entry.echoMode === TextInput.Password) {
                             pw_entry.echoMode = TextInput.Normal
                             showPw_button.source = "images/hint.svg"
-                            tooltip8.text = "hide password"
+                            tooltip8.text = "hide password" //textConstants.hidePassword
                             pw_entry.focus = true; 
                         } else { 
                             pw_entry.echoMode = TextInput.Password
                             showPw_button.source = "images/visibility.svg"
-                            tooltip8.text = "show password"
+                            tooltip8.text = "show password" //textConstants.showPassword
                             pw_entry.focus = true
                         }
                     }
@@ -358,7 +358,7 @@ Rectangle {
     Components.ToolTip {
         id: tooltip8
         target: showPw_button
-        text: "show password"//textConstants.showPassword
+        text: "show password" //textConstants.showPassword
     }
 
     /* tooltips buttonRow */
