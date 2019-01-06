@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=@CODENAME_SAFE@
+Description=@DISPLAY_NAME@ sddm theme
+Type=sddm-theme
+Author=Hendrik Lehmbruch
+Copyright=2016, Hendrik Lehmbruch
+License=EXPAT
+Screenshot=@PREVIEW@
+Version=0.1
+MainScript=Main.qml
+ConfigFile=theme.conf
+TranslationsDirectory=translations
+Theme-Id=@CODENAME_SAFE@
+Theme-API=2.0
+Website=https://github.com/siduction/sddm-theme-deepspace
