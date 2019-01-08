@@ -91,11 +91,11 @@ Rectangle {
         id: topBar
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        width: 490 //@BOXWIDTH@
+        width: 490 //@TOPBARWIDTH@
         height: 34
         color: "#333335" //"@BOXCOLOR@"
         opacity: 0.75 //@BOXOPACITY@
-        radius: 6
+        radius: 6 //@TOPBARRADIUS@
     }   
     /* end topBar */
     
