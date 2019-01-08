@@ -284,7 +284,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.18075052"
-     inkscape:cx="-1037.8075"
+     inkscape:cx="7.832682"
      inkscape:cy="14.060111"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -428,14 +428,14 @@ Markus Meyer {coruja at siduction dot org}</dc:title>
      id="layer1"
      transform="translate(587.95276,-302.18108)">
     <image
-       sodipodi:absref="/kammer/bastelecke/github/git-siduction/sddm-theme-deepspace/source-wallpaper/background.jpg"
+       sodipodi:absref="/kammer/bastelecke/github/git-siduction/sddm-theme-deepspace/source-wallpaper/source-darkside/background.jpg"
        xlink:href="background.jpg"
-       width="1654.3999"
-       height="1034"
-       id="image13244"
+       preserveAspectRatio="none"
+       y="297.18103"
        x="-775.15271"
-       y="297.18109"
-       preserveAspectRatio="none" />
+       id="image13244"
+       height="1034"
+       width="1654.3999" />
     <g
        transform="translate(-463.31192,60.251364)"
        id="layer1-4"
