@@ -57,7 +57,7 @@ Rectangle {
             
             /*reset showPw_button*/
             pw_entry.echoMode = TextInput.Password
-            showPw_button.source = "images/visibility.svg"
+            showPw_button.source = "images/hint.svg"
             tooltip8.text = "show password" //textConstants.showPw
             
             /* and Reset the message*/
@@ -245,17 +245,17 @@ Rectangle {
                  *************************************************/   
                 ImageButton {
                     id:  showPw_button
-                    source: "images/visibility.svg"
+                    source: "images/hint.svg"
                     height: 24
                     
                     onClicked: if (pw_entry.echoMode === TextInput.Password) {
                             pw_entry.echoMode = TextInput.Normal
-                            showPw_button.source = "images/hint.svg"
+                            showPw_button.source = "images/visibility.svg"
                             tooltip8.text = "hide password" //textConstants.hidePw
                             pw_entry.focus = true; 
                         } else { 
                             pw_entry.echoMode = TextInput.Password
-                            showPw_button.source = "images/visibility.svg"
+                            showPw_button.source = "images/hint.svg"
                             tooltip8.text = "show password" //textConstants.showPw
                             pw_entry.focus = true
                         }
