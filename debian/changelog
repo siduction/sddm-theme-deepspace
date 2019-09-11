@@ -1,3 +1,9 @@
+sddm-theme-paintitblack (2018.4.0~1) unstable; urgency=medium
+
+  * Fix this mess
+
+ -- Alf Gaida <agaida@siduction.org>  Sat, 26 May 2018 19:09:09 +0200
+
 sddm-theme-paintitblack (2018.01.23-4) unstable; urgency=medium
 
   * use the alternative debian-theme

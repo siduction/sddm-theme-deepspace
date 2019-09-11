@@ -4,7 +4,7 @@ Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
 Priority: optional
 Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
+Standards-Version: 4.1.4
 #Vcs-Browser: http://git.siduction.org/extra/sddm-theme-siduction
 #Vcs-Git: https://git.siduction.org/extra/sddm-theme-siduction
 #Homepage: https://git.siduction.org/extra/
