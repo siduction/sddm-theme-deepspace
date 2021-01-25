@@ -1,15 +1,15 @@
 [SddmGreeterTheme]
-Name=patience
-Description=Patience sddm theme
+Name=c-blues
+Description=c-blues sddm theme
 Type=sddm-theme
 Author=Hendrik Lehmbruch
-Copyright=2016, Hendrik Lehmbruch
+Copyright=2021, Hendrik Lehmbruch
 License=EXPAT
-Screenshot=images/preview.jpg
+Screenshot=images/preview.png
 Version=0.1
 MainScript=Main.qml
 ConfigFile=theme.conf
 TranslationsDirectory=translations
-Theme-Id=patience
+Theme-Id=c-blues
 Theme-API=2.0
 Website=https://github.com/siduction/sddm-theme-deepspace

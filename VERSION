@@ -1,9 +1,9 @@
 #!/bin/bash
 
-WALLPAPER=patience
-CODENAME_SAFE=patience
-DISPLAY_NAME=Patience
-VERSION=2018.3.0
+WALLPAPER=c-blues
+CODENAME_SAFE=c-blues
+DISPLAY_NAME=c-blues
+VERSION=2021.1.0
 DISTRIBUTION=unstable
 
 
@@ -18,15 +18,15 @@ REMEMBERLASTSESSION=true
 REMEMBERLASTUSER=true
 
 # Main.qml
-BOXWIDTH=565
-BOXHEIGTH=165
-BOXTOPMARGIN=150
-BOXCOLOR="#303030"
-BOXOPACITY=0.8
-BOXRADIUS=12
+# BOXWIDTH=565
+# BOXHEIGTH=165
+# BOXTOPMARGIN=150
+# BOXCOLOR="#303030"
+# BOXOPACITY=0.35
+# BOXRADIUS=6
 
 # metadata.desktop
-PREVIEW="images/preview.jpg"
+PREVIEW="images/preview.png"
 
 #theme.conf
-BACKGROUND="/usr/share/wallpapers/patience/contents/images/1920x1200.jpg"
+BACKGROUND="images/background.jpg"

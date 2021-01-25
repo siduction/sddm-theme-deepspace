@@ -1,5 +1,5 @@
 /***************************************************************************
-* Copyright: 2015 Hendrik Lehmbruch <hendrikL@siduction.org>
+* Copyright: 2015-2017 Hendrik Lehmbruch <hendrikL@siduction.org>
 *            2013 Nikita Mikhaylov <nslqqq@gmail.com>
 *
 * Permission is hereby granted, free of charge, to any person
@@ -23,35 +23,55 @@
 *
 ***************************************************************************/
 
-import QtQuick 2.0
+import QtQuick 2.9
 import SddmComponents 2.0
+import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.0
+import QtQuick.Controls 1.4
 
 FocusScope {
     id: container
-    width: 80; height: 30
+    width: 100; height: 30
 
-    property alias color: txtMain.color
-    property alias borderColor: txtMain.borderColor
-    property alias focusColor: txtMain.focusColor
-    property alias radius: txtMain.radius
-    property alias font: txtMain.font
-    property alias textColor: txtMain.color
-    property alias echoMode: txtMain.echoMode
-    property alias text: txtMain.text
+    property alias color: txtMainPw.color
+    property alias borderColor: txtMainPw.borderColor
+    property alias focusColor: txtMainPw.focusColor
+    property alias radius: txtMainPw.radius
+    property alias font: txtMainPw.font
+    property alias textColor: txtMainPw.color
+    property alias echoMode: txtMainPw.echoMode
+    property alias text: txtMainPw.text
     
+    Shortcut {
+       context: Qt.ApplicationShortcut
+       sequences: [StandardKey.Back, "Alt+Left, Ctrl+Z,  F14, Ctrl+Shift+Z"]
+
+        onActivated: {
+            container.clicked()
+            //console.log("JS: Shortcut activated.")
+        }
+    }
+       
     TextConstants {
         id: textConstants
-    }    
-
+    }
+    
     TextBox {
-        id: txtMain
+        
+        id: txtMainPw
         width: parent.width; height: parent.height
+        color: "transparent"
+        
+        text: ""
         font.pixelSize: 14
+        textColor: "white"
+        borderColor: "lightgrey"
+        focusColor: "white" 
+        hoverColor: "white"
 
         echoMode: TextInput.Password
 
         focus: true
     }
 }
-
 
