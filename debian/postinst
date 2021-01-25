@@ -10,16 +10,16 @@ if [[ "$1" = "configure" || "$1" = "abort-upgrade" || "$1" = "abort-remove" ]]; 
     update-alternatives --install \
         /usr/share/sddm/themes/debian-theme \
         sddm-debian-theme \
-        /usr/share/sddm/themes/patience 50
+        /usr/share/sddm/themes/c-blues 50
 fi
 
 case "$1" in
     configure)
         # keep the old configuration
         if [ -f /etc/sddm.conf ]; then
-            cp -f /usr/share/sddm/patience/sddm.conf /etc/sddm.conf.dpkg-new
+            cp -f /usr/share/sddm/c-blues/sddm.conf /etc/sddm.conf.dpkg-new
         else
-            cp -f /usr/share/sddm/patience/sddm.conf /etc/sddm.conf
+            cp -f /usr/share/sddm/c-blues/sddm.conf /etc/sddm.conf
         fi
     ;;
 

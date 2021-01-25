@@ -1,4 +1,4 @@
-Source: sddm-theme-patience
+Source: sddm-theme-c-blues
 Maintainer: Alf Gaida <agaida@siduction.org>
 Uploaders: Hendrik Lehmbruch <hendrikl@siduction.org>
 Section: x11
@@ -9,15 +9,15 @@ Vcs-Browser: https://github.com/siduction/sddm-theme-deepspace
 Vcs-Git: https://github.com/siduction/sddm-theme-deepspace.git
 Homepage: https://github.com/siduction/sddm-theme-deepspace
 
-Package: sddm-theme-patience
+Package: sddm-theme-c-blues
 Architecture: all
 Depends: ${misc:Depends},
-         patience-wallpapers,
+         c-blues-wallpapers,
          qml-module-qtgraphicaleffects,
-         qml-module-qtquick-controls
+         qml-module-qtquick-controls2         
 Recommends: sddm
 Provides: sddm-theme
 Description:  theme for sddm
- Siduction Patience sddm theme.
+ Siduction c-blues sddm theme.
  .
  This package contain a sddm theme.
