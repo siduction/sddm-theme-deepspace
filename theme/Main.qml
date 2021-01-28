@@ -292,7 +292,7 @@ Rectangle {
                                 ImageButton {
                                     id: session_button
                                     height: 32
-                                    source: "images/siductionlogin-white.png"
+                                    source: "images/siductionlogin-white.svg"
                                     onClicked: if (menu_session.state === "visible") menu_session.state = ""; else
                                     menu_session.state = "visible"
                                     KeyNavigation.backtab: pw_entry;
@@ -302,7 +302,7 @@ Rectangle {
                                 ImageButton {
                                     id: system_button
                                     height: 32
-                                    source: "images/system_shutdown.png"
+                                    source: "images/system_shutdown.svg"
                                     onClicked: sddm.powerOff()
                                     KeyNavigation.backtab: session_button;
                                     KeyNavigation.tab: reboot_button
@@ -311,7 +311,7 @@ Rectangle {
                                 ImageButton {
                                     id: reboot_button
                                     height: 32
-                                    source: "images/system_reboot.png"
+                                    source: "images/system_reboot.svg"
                                     onClicked: sddm.reboot()
                                     KeyNavigation.backtab: system_button;
                                     KeyNavigation.tab: suspend_button
@@ -320,7 +320,7 @@ Rectangle {
                                 ImageButton {
                                     id: suspend_button
                                     height: 32
-                                    source: "images/system_suspend.png"
+                                    source: "images/system_suspend.svg"
                                     visible: sddm.canSuspend
                                     onClicked: sddm.suspend()
                                     KeyNavigation.backtab: reboot_button
@@ -330,7 +330,7 @@ Rectangle {
                                 ImageButton {
                                     id: hibernate_button
                                     height: 32
-                                    source: "images/system_hibernate.png"
+                                    source: "images/system_hibernate.svg"
                                     visible: sddm.canHibernate
                                     onClicked: sddm.hibernate()
                                     KeyNavigation.backtab: suspend_button
@@ -340,7 +340,7 @@ Rectangle {
                                 ImageButton {
                                     id: login_button
                                     height: 32
-                                    source: "images/login_normal.png"
+                                    source: "images/login_normal.svg"
                                     onClicked: sddm.login(user_entry.text, pw_entry.text, menu_session.index)
                                     KeyNavigation.backtab:  hibernate_button
                                     KeyNavigation.tab: user_entry
